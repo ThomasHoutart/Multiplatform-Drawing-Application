@@ -1,0 +1,29 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+},
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "overrides": [
+      {
+          "files": ["^((?!(.spec|test)).)*.ts"]
+      }
+  ],
+  "rules": {
+    "max-lines-per-function": ["error", 15],
+    "@typescript-eslint/no-explicit-any": "off",
+    "require-await": 2,
+    "indent": ["error"],
+    "no-mixed-spaces-and-tabs": "off"
+  }
+}

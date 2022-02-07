@@ -1,0 +1,152 @@
+@import '../node_modules/@angular/material/theming';
+@import 'assets/custom-palettes/custom-palettes.scss';
+
+@include mat-core();
+
+$primary-theme-color: mat-palette($mat-custom-grey-palette, 800, 700, 900);
+$accent-theme-color: mat-palette($mat-custom-yellow-palette, 700, 600, 800);
+$default-theme: mat-light-theme($primary-theme-color, $accent-theme-color);
+
+@mixin mix-app-theme($app-theme) {
+  $primary: map-get($app-theme, primary);
+  $accent: map-get($app-theme, accent);
+
+/**************************
+ *MAT BUTTON TOGGLE GROUP *
+ **************************/
+  .mat-button-toggle {
+    background-color: mat-color($primary, 900);
+    color: mat-color($primary, default-contrast);
+  }
+
+  .mat-button-toggle-checked {
+    background-color: mat-color($accent);
+    color: mat-color($accent, default-contrast);
+  }
+
+/*****************
+ *MAT FORM FIELD *
+ *****************/
+
+ .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: mat-color($accent) !important;
+}
+
+
+  .mat-form-field {
+    color: #CCCCCC;
+  }
+
+  .mat-focused .mat-form-field-label {
+    color: mat-color($accent) !important;
+  }
+
+  .mat-form-field-label {
+    color: #CCCCCC;
+  }
+
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: mat-color($accent);
+  }
+
+  .mat-form-field-underline {
+    background-color: mat-color($accent);
+  }
+
+  .mat-form-field-ripple {
+    background-color: mat-color($accent);
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background: #4a4948;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline,
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #CCCCCC33;
+  }
+
+/***************
+ *Progress Bar *
+ ***************/
+  .mat-progress-bar-fill::after {
+    background-color: mat-color($accent);
+  }
+
+  .mat-progress-bar-buffer {
+    background: mat-color($primary);
+  }
+
+  
+/***************
+ *Raised button *
+ ***************/
+  .mat-raised-button:not(.mat-button-disabled) {
+    background-color: mat-color($accent);
+  }
+
+  .mat-raised-button.mat-button-disabled.mat-button-disabled {
+    background-color: mat-color($primary, 900);
+    color: mat-color($primary, 800);
+    border-color: mat-color($accent);
+  }
+
+ .lighter.mat-raised-button.mat-button-disabled.mat-button-disabled {
+    background-color: #292A2D;
+    color: #191A1D;
+    border-color: #F2BE54;
+  }
+/***************
+ *****Dialog****
+ ***************/
+  .mat-dialog-container {
+    background: mat-color($primary, 800);
+    color: #CCCCCC;
+  }
+  .mat-dialog-title {
+    color: #CCCCCC;
+  }
+
+/*************
+ * Mat Table *
+ *************/
+.mat-table {
+  background-color: mat-color($primary,900);
+}
+// .mat-cell{
+//   color: #CCCCCC;
+//  // background-color: mat-color($primary,00);
+// }
+.mat-header-cell{
+  color: #ffffff;
+  font-size: 15px;
+//  background-color: mat-color($primary,900);
+}
+
+/* to change selected item color in the select list */
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: black;
+}
+
+//mat select
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background: #f2be54;
+}
+
+.leaderBoardLabel .mat-form-field-label { 
+  color: black;
+}
+
+.mat-focused .mat-form-field-label {
+
+  color: black;
+}
+}
+
+// Include the mixin
+
+@include angular-material-theme($default-theme);
+@include mix-app-theme($default-theme);
+
+/*
+*/

@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*
+colorPrimary = #292A2D
+colorPrimaryDark = #191A1D
+colorAccent = #F2BE54
+colorText = #EEEEEE
+colorTextDisabled = #CCCCCC
+colorTextError = #FF6666
+*/
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    min-width: 900px;
+    min-height: 600px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #292A2D;
+    color: #EEEEEE 
+    }
+
+.noPadding-dialog-container .mat-dialog-container {
+        padding: 0;
+      }
+      .mat-form-field.mat-focused .mat-form-field-ripple{
+        background-color: black;
+      }
+      .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+        color: black;
+      }    
+      .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+        color: black;
+      }
+/*
+colorPrimary = #292A2D
+colorPrimaryDark = #191A1D
+colorAccent = #F2BE54
+colorText = #EEEEEE
+colorTextDisabled = #CCCCCC
+colorTextError = #FF6666
+*/
