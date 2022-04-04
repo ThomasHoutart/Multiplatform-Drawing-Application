@@ -1,0 +1,9 @@
+<div *ngFor="let message of messageList">
+    <app-chat-message
+    [message]="message.chatMessage.content"
+    [timestamp]="message.chatMessage.timestamp"
+    [avatar]="avatar.getAvatarUrlString(message.chatMessage.avatar)"
+    [name]="message.chatMessage.author"
+    [type]="message.type"
+    ></app-chat-message>
+</div>

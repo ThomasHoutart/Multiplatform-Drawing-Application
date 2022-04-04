@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="w90">
+    <div class="containerGameCreation">
+      <h3>Game Mode</h3>
+      <div class="gameMode center">
+        <mat-button-toggle-group name="gameMode" [value]="gamemode">
+          <mat-button-toggle value="FFA" (click)="onGameModeChange('FFA')">
+            <span class="gameMode">Free For All</span>
+            <p>Up to 4 players fight to earn the most points.<br> Everyone draws oncewhile the rest guess.<br> How many
+              points can you get?</p>
+          </mat-button-toggle>
+          <mat-button-toggle value="BR" (click)="onGameModeChange('BR')">
+            <span class="gameMode">Battle Royale</span>
+            <p>Up to 8 players fight to earn the most points and<br> to not be eliminated. Every round the slowest<br>
+              player is eliminated. See if you can survive <br>until the last round!</p>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <h3>Difficulty</h3>
+      <div class="center">
+        <mat-button-toggle-group name="difficulty" aria-label="difficulty" [value]="difficulty">
+          <mat-button-toggle value="Easy" (click)="onDifficultyChange('Easy')">
+            <span class="difficultyButton">Easy</span>
+          </mat-button-toggle>
+          <mat-button-toggle value="Normal" (click)="onDifficultyChange('Normal')">
+            <span class="difficultyButton">Normal</span>
+          </mat-button-toggle>
+          <mat-button-toggle value="Hard" (click)="onDifficultyChange('Hard')">
+            <span class="difficultyButton">Hard</span>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <h3>Lobbies</h3>
+      <div>
+        <app-lobby-list (onJoin)="joinLobby($event)"></app-lobby-list>
+      </div>
+    </div>
+  </div>
+</div>

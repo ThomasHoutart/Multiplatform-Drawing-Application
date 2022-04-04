@@ -1,0 +1,38 @@
+<div class="containerAchievements">
+    <div class="containerButtonsCards">
+        <span></span>
+        <span class="headerText">Achievements</span>
+        <div class="containerVertical">
+            <div class="vertical-center alignCenter">
+                <mat-radio-group class="radio-group" [(ngModel)]="filterValue" (change)="onChange($event)">
+                    <mat-radio-button class="radio-button" *ngFor="let choice of choices" [value]="choice"
+                        [checked]="choice === 'All'">
+                        {{choice}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+    </div>
+        <div class="containerHorizontal">
+            <div class="matListBox">
+                <mat-list class="app-class">
+                    <mat-list-item class="mat-elevation-z8" *ngFor="let achievement of achievements">
+                        <div *ngIf="achievement.rank === 'Bronze'">
+                            <img class="img" src="assets/achievementsTrophees/bronze.png" />
+                        </div>
+                        <div *ngIf="achievement.rank === 'Silver'">
+                            <img class="img" src="assets/achievementsTrophees/silver.png" />
+                        </div>
+                        <div *ngIf="achievement.rank === 'Gold'">
+                            <img class="img" src="assets/achievementsTrophees/gold.png" />
+                        </div>
+                        <div class="containerAchievementsCards">
+                            <span class="headerFont">{{achievement.trophy}}</span>
+                            <span class="hintFont">{{achievement.hint}}</span>
+                        </div>
+                        <!-- <mat-divider class="background-divider" *ngIf="!last"></mat-divider> -->
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </div>
+</div>

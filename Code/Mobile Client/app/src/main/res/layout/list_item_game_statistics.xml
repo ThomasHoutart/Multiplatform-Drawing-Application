@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gameInfo"
+        android:padding="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:background="@color/colorPrimaryLight">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            tools:text="Date: 13-09-2020"
+            android:textColor="@color/colorText"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/startTime"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            tools:text="Start Time: 14:43"
+            android:textColor="@color/colorText"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date" />
+
+        <TextView
+            android:id="@+id/endTime"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            tools:text="End Time: 14:46"
+            android:textColor="@color/colorText"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startTime" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topPlayers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="8dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/firstAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/avatar"
+            tools:src="@drawable/avatar_b_1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/secondAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/avatar"
+            tools:src="@drawable/avatar_b_1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstAvatar" />
+
+        <ImageView
+            android:id="@+id/thirdAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/avatar"
+            tools:src="@drawable/avatar_b_1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondAvatar" />
+
+        <TextView
+            android:id="@+id/firstUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            tools:text="Tony"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            app:layout_constraintLeft_toRightOf="@+id/firstAvatar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="64dp"/>
+
+        <TextView
+            android:id="@+id/secondUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            tools:text="Tequila"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            app:layout_constraintLeft_toRightOf="@+id/secondAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/firstUsername"
+            android:layout_marginStart="64dp"/>
+
+        <TextView
+            android:id="@+id/thirdUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            tools:text="Sangria"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            app:layout_constraintLeft_toRightOf="@+id/thirdAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/secondUsername"
+            android:layout_marginStart="64dp"/>
+
+        <TextView
+            android:id="@+id/firstScore"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            tools:text="1500"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/secondScore"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            tools:text="1200"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstScore" />
+
+        <TextView
+            android:id="@+id/thirdScore"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            tools:text="800"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondScore" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

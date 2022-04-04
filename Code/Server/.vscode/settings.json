@@ -1,0 +1,6 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/518b6914-2bdb-43ed-ac77-a5ec3225f0f9/resourceGroups/Projet3/providers/Microsoft.Web/sites/drawhub",
+    "appService.deploySubpath": ".",
+    "jest.autoEnable": false,
+}

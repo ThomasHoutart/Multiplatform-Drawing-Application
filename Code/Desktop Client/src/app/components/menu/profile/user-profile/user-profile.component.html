@@ -1,0 +1,48 @@
+<div class="container">
+  <mat-card class="profile">
+    <mat-card-header>
+      <mat-card-title>Thomas Outarde</mat-card-title>
+      <mat-card-subtitle>Un gros criss de gars</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div id="centeredPicture">
+        <img src="./assets/Images/thom.png" class="avatar" alt="avatar">
+      </div>
+      <hr noshade>
+      {{userInfo.firstName}} {{userInfo.lastName}}<br>
+      {{userInfo.email}}<br>
+      TODO: edit dialog
+    </mat-card-content>
+    <button mat-raised-button color="accent" (click)="editProfile()" class="topright">
+      <mat-icon color="primary">edit</mat-icon>
+    </button>
+  </mat-card>
+
+  <mat-card class="stats">
+    <mat-card-header>
+      <mat-card-title>Statistics</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="statsContainer">
+        <div class="gamesPlayed">
+          <mat-icon color="text">list</mat-icon><br> {{userInfo.numberOfGamesPlayed}} games <br> played
+        </div>
+        <div class="gameTime">
+          <mat-icon>timelapse</mat-icon><br> {{userInfo.totalGameTime}} min
+        </div>
+        <div class="gameAvg">
+          <mat-icon>timer</mat-icon><br> {{userInfo.averageGameTime}} mins <br> on average
+        </div>
+        <div class="gameConnection">
+          <mat-icon>login</mat-icon><br> Wednesday 3am
+        </div>
+        <div class="gameWinLoss" style="display: block;">
+          <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend" [colors]="pieChartColors">
+          </canvas>
+        </div>
+        <button class="complete" mat-raised-button color="accent">get complete stats</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

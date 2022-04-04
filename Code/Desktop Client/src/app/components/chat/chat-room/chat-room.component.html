@@ -1,0 +1,33 @@
+<div class="container">
+  <h3>Add a Room</h3>
+  <form [formGroup]="form" >
+    <mat-form-field appearance="outline" color="accent" class="roomnameForm">
+      <mat-label>Room Name</mat-label>
+      <input matInput formControlName="room" (keyup)="onChange()">
+    </mat-form-field>
+  </form>
+  <div class="box">
+    <div class="divWithRooms" *ngIf="fetchedList">
+      <h3 *ngIf="emptyList" class="roomListButton">No Room Found</h3>
+      <div class="listDiv" *ngFor="let room of filteredRoomList">
+        <button mat-button (click)="onJoin(room)"
+          class="roomListButton">{{room.roomName}}</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!fetchedList">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div>
+    <button mat-raised-button color="accent"
+      [disabled]="!canCreateRoom()" (click)="onCreate()"
+      class="createRoomButton">
+      CREATE NEW ROOM
+    </button>
+  </div>
+  <div *ngIf='!canCreateRoom()' style="color: red">
+    <div *ngFor="let errorMessage of errorMessages">
+      <p>{{errorMessage}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+.containerAchievements {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 10vh minmax(0,85vh);
+  }
+
+  .radio-group {
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  .radio-button {
+    margin: 5px;
+    font-size: 1.5em;
+  }
+  
+  .app-class .mat-list-item {
+    height: 100%;
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    min-width: 0;
+  }
+
+  .app-class .mat-list-base {
+    min-width: 0;
+  }
+  
+  .containerButtonsCards {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 25% 50% 25%;
+  }
+  
+  .matListBox {
+    width: 100%;
+    overflow: auto;
+    min-width: 0;
+  }
+
+  .headerText {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .containerHorizontal {
+    display: flex;  
+    flex-direction: column;
+    /* justify-content: center;   */
+    overflow: auto;
+    max-height: 100%;
+  }
+
+  .mat-list-base .mat-list-item .mat-list-item-content {
+    padding: 0px !important
+}
+
+  .headerFont {
+    color: #eeeeee;
+    margin-left: 20px;
+    font-size: 2em;
+  }
+  .containerAchievementsCards {
+    display: flex;  
+    flex-direction: column;
+  }
+  .hintFont {
+    color: #eeeeee;
+    margin-left: 20px;
+    font-size: 1.1em;
+  }
+
+  .img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .containerVertical {
+    position: relative;
+  }
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .alignLeft {
+    left: 70%;
+  }
+  .alignRight {
+    left: 20%;
+  }
+  .alignCenter {
+    left: 50%;
+  }
+  .centerContainer {
+    display: flex;
+    justify-content: center;
+  }

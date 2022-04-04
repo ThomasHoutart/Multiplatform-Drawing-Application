@@ -1,0 +1,66 @@
+<div class="smallContainerFlex">
+  <div class="playersLobbyContainer">
+    <div class="containerLobbyList">
+      <span class="headerText">{{lobbyInfos.gameName}}</span>
+      <div class="infoContainer">
+        <div class="fullSize">
+          <div class="statsContainer">
+            <span class="gameInfos">Difficulty:</span>
+            <span class="resultInfo">{{lobbyInfos.difficulty}}</span>
+          </div>
+        </div>
+        <div class="fullSize">
+          <div class="statsContainer margin-l">
+            <span class="gameInfos">Game mode:</span>
+            <span class="resultInfo">{{lobbyInfos.gameMode}}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="infoContainer">
+          <span class="playerLabel">Players</span>
+          <div class="row">
+            <span *ngIf="lobbyInfos.gameMode=='BR'" class="playerLabel right">/8</span>
+            <span *ngIf="lobbyInfos.gameMode=='FFA'" class="playerLabel right">/4</span>
+            <span class="nbPlayersLabel right">{{lobbyInfos.playerCount}}</span>
+          </div>
+        </div>
+        <div class="mat-elevation-z8 tableContainer">
+          <table mat-table [dataSource]="playersList">
+            <ng-container matColumnDef="icon">
+              <th mat-header-cell *matHeaderCellDef class="w-15 th-center stickyHeader ">Icon</th>
+              <td mat-cell *matCellDef="let player; row" [ngClass]="{'highlight': user.status.isHost && selection.isSelected(row)}"
+                 class="th-center">
+                <img [src]="avatar.getAvatarUrlString(player.avatar)" height="32" width="32">
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="username">
+              <th mat-header-cell *matHeaderCellDef class="w-75 stickyHeader ">Username</th>
+              <td mat-cell *matCellDef="let player; row" [ngClass]="{'highlight': user.status.isHost && selection.isSelected(row)}"
+               >{{player.username}}</td>
+            </ng-container>
+            <ng-container matColumnDef="role">
+              <th mat-header-cell *matHeaderCellDef class="w-10 stickyHeader ">Role</th>
+              <td mat-cell *matCellDef="let player; row" [ngClass]="{'highlight': user.status.isHost && selection.isSelected(row)}"
+                >{{player.role}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+              [ngClass]="{ 'selected': selection.isSelected(row) }" (click)="selectRow(row)"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="containerButtons center">
+        <button *ngIf="user.status.isHost" mat-raised-button class="vpButton md-button bottom buttonStyle" color="accent"
+        (click)="kickPlayer()" [disabled]='!canKickPlayer()'>Remove User</button>
+        <button *ngIf="user.status.isHost && isGameFFA()" mat-raised-button class="vpButton md-button bottom buttonStyle" color="accent"
+        (click)="addBot()" [disabled]='!canAddBot()'>
+            Add a virtual player</button>
+        <button mat-raised-button *ngIf="this.user.status.isHost" class="md-button bottom buttonStyle" color="accent"
+        (click)="startNewGame()" [disabled]="!canYouStartLobby()">
+            Start Game</button>
+        <button *ngIf="!user.status.isHost"  mat-raised-button class="md-button bottom buttonStyle w8Button" color="accent">
+             Waiting for the host...</button>
+    </div>
+  </div>

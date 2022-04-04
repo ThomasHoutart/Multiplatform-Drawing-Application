@@ -1,0 +1,39 @@
+<!--SENDER-->
+<div *ngIf="type == 0" class="TextBox">
+    <div class="pair-right">
+        <p>{{message}}</p>
+        <img class="imgEdit" [src]="avatar" style="width:32px;height:32px;margin: auto; margin-left: 5px;">
+    </div>
+    <span class="timeStamp">{{timestamp}}</span>
+    <span class="name">{{name}}</span>
+</div>
+
+<!--RECEIVER-->
+<div *ngIf="type == 1" class="TextBox received">
+    <div class="pair-left">
+        <img class="imgEdit" [src]="avatar" style="width:32px;height:32px;margin: auto; margin-right: 5px;">
+        <p>{{message}}</p>
+    </div>
+    <span class="timeStamp">{{timestamp}}</span>
+    <span class="name">{{name}}</span>
+</div>
+
+<!--SYSTEM-->
+<div *ngIf="type == 2" class="system">
+    <p>{{message}}</p>
+</div>
+
+<!--thewordwas...-->
+<div *ngIf="type == 4" class="center">
+    <div class="flexright">
+    <span  class="thewordwas">The word was: </span>
+    <span class="thewordwasy">{{message}}</span>
+    <span  class="thewordwas">!</span>
+</div>
+</div>
+
+
+<!--FOUND WORD-->
+<div *ngIf="type == 3" class="foundword">
+    <p>{{message}}</p>
+</div>

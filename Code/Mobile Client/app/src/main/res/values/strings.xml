@@ -1,0 +1,221 @@
+<resources>
+    <string name="app_name">DrawHub</string>
+    <string name="logoImageDescription">Logo</string>
+    <string name="usernameLabel">Username</string>
+    <string name="passwordLabel">Password</string>
+    <string name="loginBtnLabel">LOG IN</string>
+    <string name="forgotPasswordLabel"><u>Forgot Password?</u></string>
+    <string name="newUserLabel">New user? </string>
+    <string name="signUpLabel"><u>Sign Up</u></string>
+    <string name="firstNameLabel">First Name</string>
+    <string name="lastNameLabel">Last Name</string>
+    <string name="emailLabel">Email</string>
+    <string name="signUpBtnLabel">SIGN UP</string>
+    <string name="backBtnLabel">Go Back</string>
+    <string name="fieldsRequiredLabel">All fields are required.</string>
+    <string name="invalidLoginErrorLabel">The username or password is incorrect.</string>
+    <string name="chatTypeMessageLabel">Type a message here…</string>
+    <string name="logout">Logout</string>
+    <string name="logout_description">Sign out of your account</string>
+    <string name="requiredError">This field is required</string>
+    <string name="minLengthError">%s must contain at least %d characters</string>
+    <string name="usernameSpecialCharactersError">Username cannot contain spaces or special characters (@, !, -, _, etc)</string>
+    <string name="invalidEmailError">Please enter a valid email</string>
+    <string name="userCreatedToast">The user has been created!</string>
+    <string name="usernameTakenError">This username is taken</string>
+    <string name="emailTakenError">This email address is already used by another account</string>
+    <string name="workInProgressMessage">Feature will be implemented soon!</string>
+    <string name="alreadyLoggedInErrorLabel">This user is already logged in</string>
+    <string name="avatarImageContentDescription">avatar</string>
+    <string name="onJoinChatServerMessage">You have joined the chat</string>
+    <string name="bottomNavBarAchievements">Achievements</string>
+    <string name="bottomNavBarLeaderboard">Leaderboard</string>
+    <string name="bottomNavBarProfile">Profile</string>
+    <string name="bottomNavBarChat">Chat</string>
+    <string name="chatExitTitle">Exit</string>
+    <string name="changeRoomBtnLabel">Change Room</string>
+    <string name="joinedRoomsFragmentTitle">Joined Rooms </string>
+    <string name="cancelLabel">Cancel</string>
+    <string name="createLabel">Create</string>
+    <string name="joinLabel">Join</string>
+    <string name="addRoomDialogTitle">Add a Room</string>
+    <string name="roomNameLabel">Room Name</string>
+    <string name="leaveLabel">Leave</string>
+    <string name="deleteLabel">Delete</string>
+    <string name="leaveRoomDialogMessage">You will leave room %s. Do you want to continue?</string>
+    <string name="deleteRoomDialogMessage">You are the admin of the room %s. Leaving this room will delete it for everyone. Do you want to continue?</string>
+    <string name="chatJoinedMessage">%s has joined the room</string>
+    <string name="chatLeftMessage">%s has left the room</string>
+    <string name="currentUserChatJoinedMessage">You have joined the room</string>
+    <string name="pencilLabel">Pencil</string>
+    <string name="eraserLabel">Eraser</string>
+    <string name="undoLabel">Undo</string>
+    <string name="redoLabel">Redo</string>
+    <string name="toggleGridLabel">Toggle Grid</string>
+    <string name="cellSizeLabel">Cell Size</string>
+    <string name="gridOpacityLabel">Grid Opacity</string>
+    <string name="strokeWidthLabel">Stroke Width</string>
+    <string name="chatHistoryLabel">Chat History</string>
+    <string name="deleteRoomTitle">Delete Room?</string>
+    <string name="leaveRoomTitle">Leave Room?</string>
+    <string name="exitAppTitle">Exit the App?</string>
+    <string name="exitAppMessage">Are you sure you want to exit?</string>
+    <string name="passwordEmojiError">Password cannot contain emojis</string>
+    <string name="notConnected">You are not connected. Please try again.</string>
+    <string name="leaveGameTitle">Leave the Game?</string>
+    <string name="leaveGameMessage">Are you sure you want to leave the game?</string>
+    <string name="guess">Guess</string>
+    <string name="chat">Chat</string>
+    <string name="game_mode">Game Mode</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Hard</string>
+    <string name="mark_all_as_read">Mark all as read</string>
+    <string name="game_name">Game Name</string>
+    <string name="create_lobby">Create Lobby</string>
+    <string name="lobbies">Lobbies</string>
+    <string name="name">Name</string>
+    <string name="participants">Participants</string>
+    <string name="join_lobby">Join Lobby</string>
+    <string name="start_game">Start Game</string>
+    <string name="players">Players</string>
+    <string name="show_spectators">Show Spectators</string>
+    <string name="add_bot">Add Bot</string>
+    <string name="spectator">S</string>
+    <string name="unknown_error">An unknown error occurred…</string>
+    <string name="LobbyDoesNotExistError">Lobby does not exist</string>
+    <string name="LobbyAlreadyExistsError">Lobby already exists</string>
+    <string name="LobbyIsFullError">Lobby is full</string>
+    <string name="AlreadyInLobbyError">Already in lobby</string>
+    <string name="UserNotInLobbyError">User not in lobby</string>
+    <string name="NotEnoughPlayerError">Not enough players</string>
+    <string name="UnknownError">Unknown error</string>
+    <string name="UserDoesNotExistError">User does not exist</string>
+    <string name="SelectDifficultyAndGameMode">Select a difficulty and a game mode</string>
+    <string name="activeRoomDeletedServerMessage">This room has been deleted</string>
+    <string name="notInRoomToast">You are no longer in the room</string>
+    <string name="roomDoesNotExistToast">The room no longer exists</string>
+    <string name="game_recap">Round Recap</string>
+    <string name="next_round_starts_soon">Next Round Starts Soon…</string>
+    <string name="leaveLobbyTitle">Leave the Lobby?</string>
+    <string name="leaveLobbyMessage">Are you sure you want to leave the lobby?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="game_over">Game Over</string>
+    <string name="in_progress">In Progress</string>
+    <string name="username_avatar">Username Avatar</string>
+    <string name="avatar_portrait">Avatar Portrait</string>
+    <string name="me">Me</string>
+    <string name="word_guessed_by_other">%s guessed the word!</string>
+    <string name="word_guessed_by_current">You have guessed the word!</string>
+    <string name="seconds_remaining">%s seconds remaining!</string>
+    <string name="general_statistics">General Statistics</string>
+    <string name="connection_statistics">Connection Statistics</string>
+    <string name="game_statistics">Game Statistics</string>
+    <string name="avatar">Avatar</string>
+    <string name="spectate">Spectate</string>
+    <string name="kick_player">Kick Player</string>
+    <string name="kick_player_dialog">Are you sure you want to kick %s?</string>
+    <string name="Kick">Kick</string>
+    <string name="tutorial_image">Tutorial Image</string>
+    <string name="close">Close</string>
+    <string name="lobby_chat">Game Chat</string>
+    <string name="pager_view_error">Ops… There was a problem with the pager. Please exit and try again.</string>
+    <string name="ffa_description">Up to 4 players fight to earn the most points. Everyone draws once while the rest guess. How many points can you get?</string>
+    <string name="br_description">Up to 8 players fight to survive the longest. Every round the slowest player is eliminated. See if you can survive until the last round!</string>
+
+    <!--  ************  TUTORIAL  ************  -->
+    <string name="tutorial_page_1_title">Get Started</string>
+    <string name="tutorial_page_1_text">To play a game, click on the round pen icon in the navigation bar</string>
+
+    <string name="tutorial_page_2_title">Select a Game Mode</string>
+    <string name="tutorial_page_2_text">Click on one of the cards to select the wanted Game Mode. Each card will contain a short description of the respective game mode.</string>
+
+    <string name="tutorial_page_3_title">Select a Difficulty</string>
+    <string name="tutorial_page_3_text">Select the wanted difficulty. Difficulty changes the amount of seconds allowed to draw and guess the word.</string>
+
+    <string name="tutorial_page_4_title">The Lobby and Game List</string>
+    <string name="tutorial_page_4_text">This list represents the lobbies and games that you can spectate or join. Note that you can only spectate a game in progress. To select the wanted entry, simply click on it.</string>
+
+    <string name="tutorial_page_5_title">Join, Spectate or Create a Game</string>
+    <string name="tutorial_page_5_text">Join an existing game or create your own by clicking on the respective button!</string>
+
+    <string name="tutorial_page_6_title">Lobby Toolbar 1</string>
+    <string name="tutorial_page_6_text">The toolbar displays the name of the current lobby and allows basic navigation functionality. To leave a lobby, simply click the highlighted button. Note that if a <b>creator</b> clicks on the button, the lobby will be deleted instead.</string>
+
+    <string name="tutorial_page_7_title">Lobby Toolbar 2</string>
+    <string name="tutorial_page_7_text">To access the chat of the current lobby, click on the highlighted button. Note that while in a lobby or game, you cannot change chat room.</string>
+
+    <string name="tutorial_page_8_title">Lobby Player List</string>
+    <string name="tutorial_page_8_text">This is the list of players in the lobby. The creator can choose to kick a player from his/her lobby by clicking on the red trash icon. Spectators have a special symbol next to their name for easy recognition.</string>
+
+    <string name="tutorial_page_9_title">Show/Hide Spectators</string>
+    <string name="tutorial_page_9_text">Click the highlighted toggle button to show or hide the spectators.</string>
+
+    <string name="tutorial_page_10_title">Add a Virtual Player</string>
+    <string name="tutorial_page_10_text">Clicking on the Add Bot button allows to add a virtual player. Virtual players are treated as normal players and can therefore be removed as such.</string>
+
+    <string name="tutorial_page_11_title">Start the Game</string>
+    <string name="tutorial_page_11_text">Once the minimal number of players is reached, the creator of the lobby (and him/her only) can start the game!</string>
+
+    <string name="tutorial_page_12_title">Game Toolbar</string>
+    <string name="tutorial_page_12_text">During the game, the toolbar shows the amount of seconds remaining in the round.</string>
+
+    <string name="tutorial_page_13_title">Show/Hide the Score</string>
+    <string name="tutorial_page_13_text">Click on the highlighted button to show the list of players\' scores.</string>
+
+    <string name="tutorial_page_14_title">Show/Hide the Grid</string>
+    <string name="tutorial_page_14_text">Click on the highlighted button to toggle a helper grid on the canvas.</string>
+
+    <string name="tutorial_page_15_title">Which Word to Draw</string>
+    <string name="tutorial_page_15_text">The word at the bottom of the canvas shows which word you should draw.</string>
+
+    <string name="tutorial_page_16_title">Drawing Tools</string>
+    <string name="tutorial_page_16_text">The color wheel and its two sliders (the ones just beside it) allow you to change the color of the stroke. The top slider sets the Hue and the bottom sets the opacity of the stroke. You can also change the stroke\'s width with the third slider and alternate between the pencil and the eraser with the respective buttons. Finally you can even UNDO and REDO!</string>
+
+    <string name="tutorial_page_17_title">Artist Chat</string>
+    <string name="tutorial_page_17_text">While you are drawing you cannot write chat messages to the other players but you can see what they type and who managed to guess the right word.</string>
+
+    <string name="tutorial_page_18_title">How to Guess</string>
+    <string name="tutorial_page_18_text">Writing your guess in the highlighted (and only) text field and submitting is enough to guess! Note that you can also send chat messages to your fellow players.</string>
+
+    <string name="tutorial_page_19_title">Back to the Fullscreen Canvas</string>
+    <string name="tutorial_page_19_text">If you clicked on the chat icon in the top toolbar while guessing, you will see this view. To go back to the previous view, simply do a scale gesture on the canvas as if you wanted to enlarge it. You will be redirected immediately! Psst: You can move the canvas around while in this view so it doesn\'t interfere with the chat!</string>
+
+    <string name="tutorial_page_20_title">Access the Tutorial</string>
+    <string name="tutorial_page_20_text">Accessing your profile page will allow you to display this tutorial at any moment! Just don\'t do it too often, otherwise we will put you in the naughty list and Little Caprice will have to pay you a visit…</string>
+    <!--  ****************************************  -->
+    <string name="achievements">Achievements</string>
+    <string name="login">Login</string>
+    <string name="connection_duration">Connection duration</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="today">TODAY</string>
+    <string name="this_week">THIS WEEK</string>
+    <string name="all_time">ALL TIME</string>
+    <string name="free_for_all">Free-for-all</string>
+    <string name="battle_royale">Battle Royale</string>
+    <string name="first_and_last_name">%s %s</string>
+    <string name="average_game_time">Average Game Time: %s</string>
+    <string name="games_played">Games Played: %s</string>
+    <string name="win_rate">Win Rate: %s</string>
+    <string name="total_game_time">Total Game Time: %s</string>
+    <string name="date">Date: %s</string>
+    <string name="start_time">Start Time: %s</string>
+    <string name="end_time">End Time: %s</string>
+    <string name="profile_game_mode_and_difficulty">%s (%s)</string>
+    <string name="leaderboard_position">#%s</string>
+    <string name="no_games_recorded_with_these_parameters">No games recorded with these parameters</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="skip">Skip</string>
+    <string name="round_end_word_to_draw">The word was %s</string>
+    <string name="game_end_word_to_draw">Game Over\nThe word was %s</string>
+    <string name="start_game_help_message">Type /help in the chat to see a list of commands!</string>
+    <string name="rank">RANK</string>
+    <string name="username">USERNAME</string>
+    <string name="number_of_wins">NUMBER OF WINS</string>
+    <string name="logoutTitle">Logout?</string>
+    <string name="logoutMessage">Are you sure you wish to logout?</string>
+    <string name="delete_lobby">Delete Lobby</string>
+    <string name="delete_lobby_message">Are you sure you want to delete the lobby?</string>
+</resources>

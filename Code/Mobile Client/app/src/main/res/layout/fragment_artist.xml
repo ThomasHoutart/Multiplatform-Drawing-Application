@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".uicontrollers.game.ArtistFragment">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.android.example.drawhubmobile.views.DrawingCanvasView
+                android:id="@+id/drawingCanvasView"
+                android:layout_width="@dimen/canvas_size"
+                android:layout_height="@dimen/canvas_size"
+                android:layout_row="0"
+                android:layout_column="0" />
+
+            <TextView
+                android:id="@+id/wordToDraw"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="bottom|center"
+                android:background="@drawable/word_to_guess_background"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_medium"
+                android:paddingBottom="4dp"
+                android:textAlignment="center"
+                android:textSize="@dimen/textSize_big"
+                tools:text="CAT" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/gridFragment"
+                android:name="com.android.example.drawhubmobile.uicontrollers.game.GridFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="end" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/scoresFragment"
+                android:name="com.android.example.drawhubmobile.uicontrollers.game.ScoresFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="start" />
+        </GridLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/drawToolsFragment"
+            android:name="com.android.example.drawhubmobile.uicontrollers.game.DrawToolsFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/chatFragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/chatFragment"
+            android:name="com.android.example.drawhubmobile.uicontrollers.chat.ChatFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:inGame="true"
+            app:isArtist="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/drawToolsFragment"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

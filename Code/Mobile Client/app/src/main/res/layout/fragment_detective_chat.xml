@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".uicontrollers.game.DetectiveChatFragment">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/chatFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.chat.ChatFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_column="0"
+        app:inGame="true"
+        app:isArtist="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/drawToolsFragment"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+    <com.android.example.drawhubmobile.views.CardDragLayout
+        android:id="@+id/cardDragLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_column="0"
+        android:alpha="0.5">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/canvasCardView"
+            android:layout_width="400dp"
+            android:layout_height="400dp">
+
+            <com.android.example.drawhubmobile.views.DrawingCanvasView
+                android:id="@+id/drawingCanvasView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:transitionName="chatCanvasView" />
+        </com.google.android.material.card.MaterialCardView>
+    </com.android.example.drawhubmobile.views.CardDragLayout>
+</GridLayout>

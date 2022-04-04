@@ -1,0 +1,20 @@
+<div class="containerRowsGameView">
+  <div class="containerColumnsGameView">
+    <div class=containerTimerAndScoreboard>
+      <app-timer></app-timer>
+      <div class="containerVertical">
+        <div class="vertical-center alignCenter fullWidth">
+          <app-game-scoreboard></app-game-scoreboard>
+        </div>
+      </div>
+    </div>
+    <div class="drawingContainer">
+      <span *ngIf="isDetective" class="detectiveWord infoBarTxt">{{sentenceForNonArtist()}}</span>
+      <span *ngIf="!isDetective" class="infoBarTxt">{{getWordArtist()}}</span>
+      <div class="containerScoreBoardDrawingSurface">
+          <app-drawing-surface></app-drawing-surface>
+      </div>
+    </div>
+  </div>
+  <app-drawing-tool-box *ngIf="game.isUserDrawing"></app-drawing-tool-box>
+</div>

@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+    grid-template-rows: auto auto 200px auto;
+    display: grid;
+}
+
+.list {
+    background-color: lightgrey;
+}
+.roomButton {
+    margin: 7px;
+}

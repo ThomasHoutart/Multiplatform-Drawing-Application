@@ -1,0 +1,82 @@
+h3 {
+  color: #CCCCCC
+}
+
+.tableContainer {
+  background-color: #191a1d;
+}
+input, select, textarea{
+  color: #EEEEEE;
+}
+.stickyHeader {
+  background-color: #191A1D;
+  position: sticky; 
+  top: 0;
+}
+
+.tableContainer {
+  height: 90%;
+  width: 100%;
+  overflow: auto;
+}
+
+.inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-20 {
+  width: 20%;
+}
+.th-center{
+  text-align: center;
+}
+
+ .mat-row.selected {
+  /* background: #f2be54 !important; */
+  background: #393A3D !important;
+}
+
+.mat-cell{
+  color: #CCCCCC;
+}
+
+.mat-cell.highlight{
+  color: black !important;
+}
+
+.containerLobbyList {
+  height: 100%;
+  width: 100%;
+  grid-template-rows: 1fr 40px;
+  display: grid;
+}
+
+.highlight{
+  color: black !important;
+  background: #f2be54 !important;
+}
+.buttonStyle {
+  margin-right: 20px;
+  margin-left: 20px;
+ font-size: larger;
+ width: 220px;
+ height: 40px;
+}

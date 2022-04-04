@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation_graph"
+    app:startDestination="@id/gameSelectFragment">
+
+    <fragment
+        android:id="@+id/mainBackgroundFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.MainBackgroundFragment"
+        android:label="fragment_main_background"
+        tools:layout="@layout/fragment_main_background" />
+    <fragment
+        android:id="@+id/gameSelectFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.gameSelect.GameSelectFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_game_select" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_authActivity"
+            app:destination="@id/authActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/authActivity"
+        android:name="com.android.example.drawhubmobile.uicontrollers.auth.AuthActivity"
+        android:label="activity_auth"
+        tools:layout="@layout/activity_auth" />
+    <fragment
+        android:id="@+id/achievementsFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.AchievementsFragment"
+        android:label="fragment_achievements"
+        tools:layout="@layout/fragment_achievements" />
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.LeaderboardFragment"
+        android:label="fragment_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
+</navigation>

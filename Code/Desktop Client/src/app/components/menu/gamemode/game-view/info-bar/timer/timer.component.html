@@ -1,0 +1,10 @@
+<div class="verticalAlign">
+  <div id="countdown">
+    <div #drawingSurface class="countdown-number">{{timeLeft}}</div>
+    <svg>
+      <circle [style.animation-play-state]="animeState" [style.animation-duration]="countdown + 's'" id="circle" [class]="class" r="65" cx="70"
+        cy="70">
+      </circle>
+    </svg>
+  </div>
+</div>

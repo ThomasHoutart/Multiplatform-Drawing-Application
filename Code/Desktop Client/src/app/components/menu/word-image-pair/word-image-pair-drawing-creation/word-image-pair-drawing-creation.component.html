@@ -1,0 +1,23 @@
+<div class="drawingContainer">
+  <span class="headerText">{{wordImagePairHandler.wordImagePair.word}}</span>
+  <div class="russianDoll">
+    <div class="containerVertical">
+      <div class="vertical-center alignCenter fullWidth">
+        <app-drawing-surface #drawingSurface></app-drawing-surface>
+      </div>
+    </div>
+  </div>
+  <div class="toolBoxAndButtonsContainer">
+    <div class="center">
+   <button color="accent" class="returnButton navButton" mat-raised-button (click)="back()">
+        Back
+      </button>
+    </div>
+    <app-drawing-tool-box></app-drawing-tool-box>
+    <div class="center">
+      <button color="accent" class="continueButton navButton" mat-raised-button (click)="continue()">
+        Continue
+      </button>
+    </div>
+  </div>
+</div>

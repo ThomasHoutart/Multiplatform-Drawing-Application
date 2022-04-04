@@ -1,0 +1,9 @@
+<div *ngIf="sectionParameters" class="container">
+    <app-word-image-pair-parameters (sendInfo)="onInfoSubmit($event)"></app-word-image-pair-parameters>
+</div>
+<div *ngIf="sectionDrawing" class="container">
+    <app-word-image-pair-drawing-creation (sendDrawing)="onDrawingSubmit($event)"></app-word-image-pair-drawing-creation>
+</div>
+<div *ngIf="sectionPreview" class="container">
+    <app-word-image-pair-preview [wordImagePair]="wordImagePair"></app-word-image-pair-preview>
+</div>

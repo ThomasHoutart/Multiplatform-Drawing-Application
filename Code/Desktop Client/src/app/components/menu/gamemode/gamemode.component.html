@@ -1,0 +1,9 @@
+<div *ngIf="state==refState.GameCreationView" class="fullSize">
+<app-game-creation (onJoin)="changeState($event)"></app-game-creation>
+</div>
+<div *ngIf="state==refState.LobbyView" class="fullSize">
+  <app-lobby (onStart)=changeState($event) (onBack)=changeState($event)></app-lobby>
+</div>
+<div *ngIf="state==refState.InGameView" class="fullSize">
+  <app-game-view (onBack)='changeState($event)'></app-game-view>
+</div>

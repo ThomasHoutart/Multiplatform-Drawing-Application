@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="modeName"
+            type="String" />
+
+        <variable
+            name="modeDescription"
+            type="String" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/backgroundCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_small"
+        android:clickable="true"
+        android:padding="@dimen/margin_small"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardElevation="4dp"
+        app:strokeColor="@color/colorAccent"
+        tools:context=".uicontrollers.main.gameSelect.GameModeItemFragment">
+
+        <LinearLayout
+            android:id="@+id/highlightedView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:text="@{modeName}"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/textSize_big"
+                android:textStyle="bold"
+                tools:text="Free-For-All" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{modeDescription}"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/textSize_default"
+                tools:text="2 to 8 players battle each other to accumulate the maximum number of points." />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/nonHighlightedView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryLight"
+            android:padding="8dp"
+            android:text="@{modeName}"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold"
+            tools:text="Free-For-All" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

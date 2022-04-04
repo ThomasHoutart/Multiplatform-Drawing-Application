@@ -1,0 +1,38 @@
+<div class="container">
+  <form id="loginForm" [formGroup]="form">
+    <img id="logo" src="assets/Images/DrawHub_Logo.svg" alt="LOGO" style="height: 150px;">
+    <div class="input">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput color ="accent" formControlName="username">
+        <mat-error *ngIf="form.get('username').invalid">
+          <div *ngIf="form.get('username').errors.required">
+            Username must be provided
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" color ="accent" [type]="'password'">
+        <mat-error *ngIf="form.get('password').invalid">
+          <div *ngIf="form.get('password').errors.required">
+            Password must be provided
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <button id="loginButton" class="buttonLogin lighter" mat-raised-button color ="accent" 
+    [disabled]="form.get('username').invalid || form.get('password').invalid || loading"
+    (click)="onSubmit()">Log In</button>
+    <div class="loading" *ngIf="loading">
+      <mat-progress-bar mode="query"></mat-progress-bar>
+    </div>
+    <div class="loading error" *ngIf="errorMessage !== ''">
+      <p>{{errorMessage}}</p>
+    </div>
+  </form>
+  <button (click)="onCreateAccount()" id="createAccount" mat-raised-button color ="accent" 
+  [disabled]="loading">Create Account</button>
+</div>

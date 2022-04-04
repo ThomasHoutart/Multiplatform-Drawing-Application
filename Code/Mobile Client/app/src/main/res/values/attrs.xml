@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChatFragment">
+        <attr name="inGame" format="boolean" />
+        <attr name="isArtist" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="GameModeItemFragment">
+        <attr name="gameMode" format="enum">
+            <enum name="FREE_FOR_ALL" value="0" />
+            <enum name="BATTLE_ROYALE" value="1" />
+        </attr>
+        <attr name="modeName" format="string" />
+        <attr name="modeDescription" format="string" />
+    </declare-styleable>
+    <declare-styleable name="LobbyFragment">
+        <attr name="isCreator" format="boolean" />
+    </declare-styleable>
+</resources>

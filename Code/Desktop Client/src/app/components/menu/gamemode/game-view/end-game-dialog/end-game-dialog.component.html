@@ -1,0 +1,15 @@
+  <div class="containerEndRoundPopUp no-click-backdrop">
+    <div class="center">
+        <span class="bigSize th-center">{{data.finalPosition}}</span>
+    </div>
+    <div class="preventOverflow">
+      <div class="overflow">
+        <app-game-scoreboard></app-game-scoreboard>
+      </div>
+    </div>
+    <mat-dialog-actions>
+      <button mat-raised-button class="returnButton" [mat-dialog-close]="true" color="accent" cdkFocusInitial>Return to
+        the Main Menu</button>
+    </mat-dialog-actions>
+  </div>
+  <canvas id="confetti" #confetti></canvas>

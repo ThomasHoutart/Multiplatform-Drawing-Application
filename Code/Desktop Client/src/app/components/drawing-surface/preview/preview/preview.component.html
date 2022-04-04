@@ -1,0 +1,19 @@
+<div id="container"
+#drawingSurface
+style="display: block; padding: 0; margin: auto;"
+>
+  <svg height="100%" width="100%" fill="white">
+      <g *ngFor="let element of displayedElements">
+      <path
+          [attr.d]="element.path"
+          [attr.stroke]="element.color"
+          [attr.stroke-opacity]="element.opacity"
+          [attr.stroke-width]="element.strokeWidth"
+          fill="none"
+          fill-opacity="0"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+      ></path>
+      </g>
+  </svg>
+</div>

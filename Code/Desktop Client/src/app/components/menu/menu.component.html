@@ -1,0 +1,69 @@
+<div [ngClass]="{'containerWithChat': chatIntegrated,'containerWithoutChat': !chatIntegrated}">
+  <div class="toolbar">
+    <img id="logo" src="assets/Images/DrawHub_Icon.svg" alt="LOGO">
+    <hr id="separator" />
+    <div class="buttons" *ngIf="ExitButton">
+      <button mat-raised-button  matTooltip="Leave Lobby/Game" matTooltipPosition="right" color="accent" (click)="onLeave()">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
+    <div class="buttons" *ngIf="!ExitButton">
+      <button mat-raised-button matTooltip="Join/Create Game" matTooltipPosition="right"
+      color="accent" (click)="page=0">
+        <mat-icon>create</mat-icon>
+      </button>
+    </div>
+    <div class="buttons" *ngIf="!ExitButton">
+      <button mat-raised-button matTooltip="Profile" matTooltipPosition="right" color="accent" (click)="onProfile()">
+        <mat-icon>person</mat-icon>
+      </button>
+    </div>
+    <div class="buttons" *ngIf="!ExitButton">
+      <button mat-raised-button matTooltip="Leaderboard" matTooltipPosition="right" color="accent" (click)="page=2">
+        <mat-icon>leaderboard</mat-icon>
+      </button>
+    </div>
+    <div class="buttons" *ngIf="!ExitButton">
+      <button mat-raised-button  matTooltip="Trophies" matTooltipPosition="right" color="accent" (click)="page=5">
+        <mat-icon>emoji_events</mat-icon>
+      </button>
+    </div>
+    <div class="buttons" *ngIf="!ExitButton">
+      <button mat-raised-button  matTooltip="Create Word-Pair Image" matTooltipPosition="right" color="accent" (click)="page=3">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <div class="buttons" *ngIf="!ExitButton">
+      <button mat-raised-button  matTooltip="Tutorial" matTooltipPosition="right" color="accent" (click)="onTutorial()">
+        <mat-icon>school</mat-icon>
+      </button>
+    </div>
+    <div class="buttons bottom" *ngIf="!ExitButton">
+      <button mat-raised-button  matTooltip="Leave the app" matTooltipPosition="right" color="accent" (click)="logout()" style="transform: scaleX(-1);">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div id="mainView">
+    <div *ngIf="page == 0" class = "fullSize">
+      <app-gamemode></app-gamemode>
+    </div>
+    <div *ngIf="page == 1" class = "fullSize">
+      <app-profile></app-profile>
+    </div>
+    <div *ngIf="page == 2" class = "fullSize">
+      <app-leaderboard></app-leaderboard>
+    </div>
+    <div *ngIf="page == 5" class = "fullSize">
+      <app-achievements class = "fullSize"></app-achievements>
+    </div>
+    <div *ngIf="page == 3" class="wordImagePairWindow">
+      <app-word-image-pair></app-word-image-pair>
+    </div>
+    <div *ngIf="page == 4" class="wordImagePairWindow">
+      <app-game-view></app-game-view>
+    </div>
+  </div>
+  <div id="chatSection" *ngIf="chatIntegrated">
+    <app-chat></app-chat>
+  </div>

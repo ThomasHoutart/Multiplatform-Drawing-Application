@@ -1,0 +1,13 @@
+<div *ngFor="let room of roomList; let i = index">
+  <div matRipple [matRippleColor]="myColor">
+    <mat-card (click)="joinRoom(room, $event)" [matBadge]="counterList[i]" [matBadgeHidden]="counterList[i]===0" matBadgePosition="before" matBadgeColor="accent">
+      <div class="container">
+        <h3>{{room.roomName}}</h3>
+        <button id="leaveButton" mat-flat-button color="send"
+          (click)="leaveRoom(room.roomName); $event.stopPropagation()" *ngIf="i != 0">
+          <mat-icon class="deleteIcon">delete_forever</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

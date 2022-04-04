@@ -1,0 +1,84 @@
+.container {
+  display: grid;
+  padding: 10%;
+  grid-template-columns: 40fr 60fr;
+  grid-template-rows: 1fr;
+  grid-gap: 50px;
+}
+
+.topright {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+}
+
+.statsContainer {
+  display: grid;
+  grid-template-columns: 5fr 5fr;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 20px;
+}
+
+.gamesPlayed {
+  text-align: center;
+  vertical-align: center;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.gameTime {
+  text-align: center;
+  vertical-align: center;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.gameWinLoss {
+  text-align: center;
+  vertical-align: center;
+  grid-row: 3;
+  grid-column: 1 / span 2;
+}
+
+.gameConnection {
+  text-align: center;
+  vertical-align: center;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.gameAvg {
+  text-align: center;
+  vertical-align: center;
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.complete {
+  text-align: center;
+  vertical-align: center;
+  grid-row: 4;
+  grid-column: 1 / span 2;
+}
+
+.stats {
+  vertical-align: center;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+#centeredPicture {
+  text-align: center;
+}
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.profile {
+  vertical-align: center;
+  grid-row: 1;
+  grid-column: 1;
+}

@@ -1,0 +1,159 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.moveChatBox {
+  padding-left: 8px;
+  padding-right: 8px;
+  min-width: 36px;
+}
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 64px calc(100vh - 128px) 64px;
+  grid-template-columns: auto;
+  background-color: #191A1D;
+}
+
+h2 {
+  color: #EEEEEE;
+  font-weight: 300;
+}
+
+.black {
+  color: black;
+}
+
+.chat {
+  padding: 0 10px;
+  height: 100vh;
+  max-height: calc(100vh - 128px);
+  overflow: scroll;
+  background: #393A3D;
+}
+.historyDiv {
+  background: #44535E;
+}
+.historyButton {
+  background: #44535E;
+  opacity: 70%;
+  font-style: italic;
+}
+
+.TextBox:not(.received) p {
+  margin-left: auto;
+}
+
+.TextBox.received p {
+  background-color: #EEEEEE;
+  color: #191A1D;
+}
+
+.name {
+  grid-row: 1;
+  visibility: collapse;
+  text-align: right;
+}
+
+.TextBox.received .name {
+  text-align: left;
+  visibility: visible;
+}
+
+.timeStamp {
+  grid-row: 3;
+  text-align: right;
+}
+
+.TextBox.received .timeStamp {
+  text-align: left;
+}
+
+.TextBox span {
+  color: #CCCCCC;
+}
+
+.TextBox img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.TextBox img.right {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+
+.system {
+  color: #CCCCCC;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.chatBox {
+  background-color: #191A1D;
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 1fr 64px;
+}
+
+.JoinRoom {
+  width: 100%;
+  height: 100%;
+}
+
+#chatMessageInput {
+  width: calc(100% - 64px);
+  height: 58px;
+  font-size: 16px;
+  background-color: #191A1D;
+  color: #EEEEEE;
+  outline: none;
+  border: none;
+  padding-left: 8px;
+}
+
+.mat-send {
+  background-color: #F2BE54;
+  color: #191A1D;
+}
+
+::ng-deep.mat-focused .mat-form-field-label {
+  color: #F2BE54 !important;
+}
+
+
+::ng-deep.mat-form-field-underline {
+  background-color: #F2BE54 !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  background-color: #F2BE54 !important;
+  ;
+}
+
+::ng-deep .mat-flat-button .sendButton      {
+  background-color: #191A1D;
+  color: #191A1D;
+  border-color: #191A1D;
+}
+
+::ng-deep .mat-button-disabled .sendButton {
+  background-color: #191A1D;
+  color: #191A1D;
+  border-color: #191A1D;
+}
+
+.sendButton {
+  color: transparent;
+}
+
+.mat-button,
+.mat-flat-button {
+  border-radius: 0px;
+}

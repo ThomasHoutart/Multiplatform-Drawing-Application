@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backgroundCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardElevation="0dp">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_small">
+
+        <TextView
+            android:id="@+id/lobbyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnWeight="2"
+            android:singleLine="true"
+            android:textAlignment="center"
+            tools:text="Cool Name" />
+
+        <TextView
+            android:id="@+id/lobbyParticipants"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:textAlignment="center"
+            tools:text="3/4" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/gameInProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="@dimen/margin_small"
+        android:text="@string/in_progress"
+        android:textColor="@color/colorAccent"
+        android:visibility="gone" />
+</com.google.android.material.card.MaterialCardView>

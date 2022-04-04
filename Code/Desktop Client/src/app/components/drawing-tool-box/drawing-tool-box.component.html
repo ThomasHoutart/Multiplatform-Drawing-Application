@@ -1,0 +1,62 @@
+<div class="centerContainer">
+  <div class="containerToolBox">
+    <div>
+      <div class="textSlider">Stroke Width ({{strokeWidth}})</div>
+      <div class="containerVertical">
+        <div class="vertical-center alignCenter">
+          <mat-slider tickInterval="1" min="1" max="100" [value]="strokeWidth" (input)="updateStrokeWidth($event)">
+          </mat-slider>
+        </div>
+      </div>
+    </div>
+    <div class="containerVertical">
+        <span #ignoredInput [cpPosition]="'top'" [cpToggle]="colorPickerIsOpen" [cpPositionRelativeToArrow]="true"
+        [cpOutputFormat]="'rgba'" [colorPicker]="color" [cpIgnoredElements]="[ignoredButton, ignoredInput]"
+        (colorPickerChange)="updateColor($event);color=$event"></span>
+      <div class="vertical-center alignCenter">
+        <button #ignoredButton mat-mini-fab class="colorPickerButton" [ngClass]="{'border': colorPickerIsOpen}" (click)="changeColorPickerState()">
+          <mat-icon>color_lens</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="containerVertical">
+      <div class="vertical-center alignLeft">
+        <button mat-fab class="drawButton" [ngClass]="{'border': pencilSelected}" isRoundButton="true" (click)="changeTool(true)">
+          <mat-icon>create</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="containerVertical alignRight">
+      <div class="vertical-center">
+        <button mat-fab class="eraseButton" [ngClass]="{'border': !pencilSelected}" (click)="changeTool(false)">
+          <img id="logo" src="assets/Images/eraser-icon.svg" alt="LOGO">
+        </button>
+      </div>
+    </div>
+    <div class="containerVertical">
+      <div class="vertical-center alignCenter">
+        <button mat-mini-fab class="colorPickerButton" [ngClass]="{'border': toggleGridSelected}" (click)="toggleGrid()">
+          <mat-icon>grid_on</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="containterCellSizeAndOpacity">
+    <div>
+      <div class="textSlider">Cell Size ({{cellSize}})</div>
+      <div class="containerVertical">
+        <div class="vertical-center alignCenter">
+          <mat-slider tickInterval="1" min="10" max="100" [value]="cellSize" (input)="updateCellSize($event)" class="strokeSlider"></mat-slider>
+        </div>
+      </div>
+    </div>
+      <div>
+        <div class="textSlider">Opacity ({{opacity}}%)</div>
+        <div class="containerVertical">
+          <div class="vertical-center alignCenter">
+            <mat-slider tickInterval="1" min="1" max="100" [value]="opacity" (input)="updateOpacity($event)"></mat-slider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

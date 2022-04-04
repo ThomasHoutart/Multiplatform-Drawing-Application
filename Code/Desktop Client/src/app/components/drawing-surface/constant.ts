@@ -1,0 +1,1 @@
+export const DRAWING_SURFACE_SIZE = 525;

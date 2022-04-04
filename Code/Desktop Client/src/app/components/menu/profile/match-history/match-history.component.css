@@ -1,0 +1,282 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+
+.maxSize {
+  height: 57vh;
+}
+
+.preventOverflow {
+  overflow: auto;
+  background-color: #393A3D;
+}
+
+.containerGameDetails {
+  margin-top: 24px;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.stickyHeader {
+  background-color: #191A1D;
+  position: sticky; 
+  top: 0;
+}
+.gameName {
+  color: #EEEEEE;
+  margin-left: auto;
+  margin-right: auto;
+}
+.border {
+  border: 5px;
+    border-style: solid;
+    border-color: #191A1D;
+}
+.containerGameInfos {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerText {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.containerScoreboard {
+  background-color: #191a1d;
+}
+
+.mat-expansion-panel-header {
+  background-color: #393A3D;
+  border-bottom-style: solid;
+  border-bottom-color: #292A2D;
+}
+
+.mat-expansion-panel-header-title {
+  color: #EEEEEE !important;
+}
+
+.mat-expansion-panel.mat-expanded .mat-expansion-panel-header {
+  background-color: #191A1D;
+}
+.mat-accordion .mat-expansion-panel {
+  background-color: #393A3D;
+}
+::ng-deep .mat-expansion-panel-content {
+  /* border: 5px !important;
+  border-style: solid !important;
+  border-color: #191A1D !important; */
+  background-color: #393A3D !important;
+}
+
+.disable_ripple:hover {
+  background: #f2be54 !important;
+  color: white
+}
+
+.timeLeftText {
+  text-align: center;
+  background-color: #f2be54;
+  color: #191a1d;
+  font-weight: bold;
+}
+
+.th-center {
+  text-align: center;
+
+}
+
+::ng-deep .noPadding-dialog-container .mat-dialog-container {
+  padding: 0;
+}
+
+.containerVertical {
+  position: relative;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.statsContainer {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.labelInfo {
+  margin-right: 8px;
+  color: #EEEEEE;
+  font-size: 1.5em;
+}
+
+.resultInfo {
+  color: #f2be54;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.alignCenter {
+  left: 50%;
+}
+
+.yellow {
+  background-color: #f2be54;
+}
+
+.containerVCenter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: table;
+}
+
+.containerScoreboard {
+  width: 100%;
+  height: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.h-row {
+  height: 70px;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.bigSize {
+  color: #EEEEEE !important;
+  font-size: 1.8em;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.th-left {
+  text-align: left;
+}
+
+.mat-cell {
+  color: #CCCCCC;
+}
+
+.mat-cell.highlight {
+  color: black !important;
+}
+
+.tableContainer {
+  background-color: #191a1d;
+}
+
+::ng-deep.mat-dialog-actions {
+  padding: 0;
+  margin: 0;
+}
+
+.returnButton {
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.containerScoreboard {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.h-row {
+  height: 70px;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.bigSize {
+  color: #EEEEEE !important;
+  font-size: 1.17em;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.th-left {
+  text-align: left;
+}
+
+.th-center {
+  text-align: center;
+}
+
+.mat-cell {
+  color: #CCCCCC;
+}
+
+.mat-cell.highlight {
+  color: black !important;
+}
+
+.tableContainer {
+  background-color: #191a1d;
+}

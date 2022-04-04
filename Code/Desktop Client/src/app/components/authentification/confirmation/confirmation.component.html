@@ -1,0 +1,21 @@
+<div class="container">
+    <form id="loginForm" [formGroup]="form">
+      <img id="logo" src="assets/Images/DrawHub_Logo.svg" alt="LOGO">
+      <h4>Please enter the code you've receive through your email</h4>
+      <div class="input">
+        <mat-form-field appearance="outline">
+          <mat-label>Code</mat-label>
+          <input matInput color ="accent" formControlName="code">
+        </mat-form-field>
+      </div>
+      <button id="loginButton" class="buttonLogin" mat-raised-button color ="accent" [disabled]="form.get('code').invalid"
+      (click)="onConfirm()">Confirm</button>
+      <div class="loading" *ngIf="loading">
+        <mat-progress-bar mode="query"></mat-progress-bar>
+      </div>
+      <div class="loading error" *ngIf="errorMessage !== ''">
+        <p>{{errorMessage}}</p>
+      </div>
+    </form>
+    <button (click)="onBack()" class="buttonLogin" id="forgotPassword" mat-raised-button color ="accent">back</button>
+  </div>

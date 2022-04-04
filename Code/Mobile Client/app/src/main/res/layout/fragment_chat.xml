@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="chatViewModel"
+            type="com.android.example.drawhubmobile.viewmodels.chat.ChatViewModel" />
+        <variable
+            name="activeRoomName"
+            type="String" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        tools:context=".uicontrollers.chat.ChatFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- TOOL BAR-->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/chatAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toTopOf="@id/chatMessagesView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true">
+
+                    <ImageButton
+                        android:id="@+id/backButton"
+                        android:layout_width="64dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:contentDescription="@string/backBtnLabel"
+                        android:padding="0dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_keyboard_arrow_left_24px"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/toolbar_title"
+                        style="@style/ChatAppBarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{activeRoomName}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="General" />
+
+                    <ImageButton
+                        android:id="@+id/getHistoryButton"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/chatHistoryLabel"
+                        android:src="@drawable/ic_history_24px"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/changeRoomButton"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/changeRoomButton"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/changeRoomBtnLabel"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <!--  MESSAGES  -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chatMessagesView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toTopOf="@+id/chatSendGrid"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chatAppBar"
+                tools:listitem="@layout/chat_message_view_sent" />
+
+            <!--  CHAT BAR  -->
+            <GridLayout
+                android:id="@+id/chatSendGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@color/colorPrimaryDark"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:paddingEnd="@dimen/margin_small"
+                android:rowCount="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chatMessagesView">
+
+                <EditText
+                    android:id="@+id/chatMessageInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_columnWeight="32"
+                    android:background="@color/colorPrimaryDark"
+                    android:hint="@string/chatTypeMessageLabel"
+                    android:imeOptions="actionSend"
+                    android:lines="1"
+                    android:maxLength="@integer/max_chat_characters"
+                    android:padding="@dimen/margin_small"
+                    android:singleLine="true"
+                    android:text="@={chatViewModel.textMessage}"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/sendButton"
+                    style="@style/ChatSendButton"
+                    android:onClick="@{_ -> chatViewModel.sendMessage()}" />
+
+            </GridLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,154 @@
+<div class="container">
+  <img id="logo" src="assets/Images/DrawHub_Logo.svg" alt="LOGO" style="height: 100px;">
+  <form [formGroup]="form" id="signupForm">
+    <div class="pair">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+        <mat-error *ngIf="form.get('firstName').invalid">
+          <div *ngIf="form.get('firstName').errors.required">
+            First name must be provided
+          </div>
+          <div *ngIf="form.get('firstName').errors.minlength">
+            First name must be 2 characters or more
+          </div>
+          <div *ngIf="form.get('firstName').errors.maxlength">
+            First name must be 20 characters or below
+          </div>
+          <div *ngIf="form.get('firstName').errors.pattern">
+            First name must use letters only
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+        <mat-error *ngIf="form.get('lastName').invalid">
+          <div *ngIf="form.get('lastName').errors.required">
+            Last name must be provided
+          </div>
+          <div *ngIf="form.get('lastName').errors.minlength">
+            Last name must be 2 characters or more
+          </div>
+          <div *ngIf="form.get('lastName').errors.maxlength">
+            Last name must be 20 characters or below
+          </div>
+          <div *ngIf="form.get('lastName').errors.pattern">
+            Last name must use letters only
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="pair">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username">
+        <mat-error *ngIf="form.get('username').invalid">
+          <div *ngIf="form.get('username').errors.required">
+            Username must be provided
+          </div>
+          <div *ngIf="form.get('username').errors.minlength">
+            Username must be 4 characters or more
+          </div>
+          <div *ngIf="form.get('username').errors.maxlength">
+            Username must be 20 characters or below
+          </div>
+          <div *ngIf="form.get('username').errors.pattern">
+            Username must use regular characters
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" [type]="'password'">
+        <mat-error *ngIf="form.get('password').invalid">
+          <div *ngIf="form.get('password').errors.required">
+            Password must be provided
+          </div>
+          <div *ngIf="form.get('password').errors.minlength">
+            Password must be 4 characters or more
+          </div>
+          <div *ngIf="form.get('password').errors.maxlength">
+            Password must be 20 characters or below
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline" class="noMarginBottom">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="form.get('email').invalid">
+        <div *ngIf="form.get('email').errors.required">
+          Email must be provided
+        </div>
+        <div *ngIf="form.get('email').errors.minlength">
+          Email must be over 4 characters
+        </div>
+        <div *ngIf="form.get('email').errors.maxlength">
+          Email must be 20 characters or below
+        </div>
+        <div *ngIf="form.get('email').errors.pattern">
+          The email format is not valid
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <div class="avatarGroup">
+      <p class="noMarginNoPadding">Avatars</p>
+      <mat-button-toggle-group name="avatars" class="avatars" aria-label="Avatars" [value]="selectedAvatar.toString()">
+        <mat-button-toggle value="0" (click)='changeAvatar(0)'>
+          <img [src]="avatarUrl(0)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="1" (click)='changeAvatar(1)'>
+          <img [src]="avatarUrl(1)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="2" (click)='changeAvatar(2)'>
+          <img [src]="avatarUrl(2)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="3" (click)='changeAvatar(3)'>
+          <img [src]="avatarUrl(3)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="4" (click)='changeAvatar(4)'>
+          <img [src]="avatarUrl(4)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="5" (click)='changeAvatar(5)'>
+          <img [src]="avatarUrl(5)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="6" (click)='changeAvatar(6)'>
+          <img [src]="avatarUrl(6)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="7" (click)='changeAvatar(7)'>
+          <img [src]="avatarUrl(7)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="8" (click)='changeAvatar(8)'>
+          <img [src]="avatarUrl(8)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="9" (click)='changeAvatar(9)'>
+          <img [src]="avatarUrl(9)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="10" (click)='changeAvatar(10)'>
+          <img [src]="avatarUrl(10)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+        <mat-button-toggle value="11" (click)='changeAvatar(11)'>
+          <img [src]="avatarUrl(11)" style="width:48px;height:48px;margin: auto;">
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div id="buttonsDiv">
+      <button class="lighter" mat-raised-button [disabled]="form.invalid" (click)="createAccount()">Create</button>
+      <button mat-stroked-button (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+  <div class="loading" *ngIf="loading">
+    <mat-progress-bar mode="query"></mat-progress-bar>
+  </div>
+  <div class="loading error" *ngIf="dupUsername">
+    <p>This username is already used by an other account</p>
+  </div>
+  <div class="loading error" *ngIf="dupEmail">
+    <p>This email is already used by an other account</p>
+  </div>
+  <div class="loading error" *ngIf="badRequest">
+    <p>There was an issue with the creation of the account. Please try with different information. Note that username starting with 'bot_' and 
+      'sys' or username 'undefined' and 'null' are prohibited.</p> 
+  </div>
+</div>

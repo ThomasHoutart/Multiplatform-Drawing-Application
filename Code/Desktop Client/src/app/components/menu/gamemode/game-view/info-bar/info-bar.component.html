@@ -1,0 +1,7 @@
+<div class= "containerInfoBar">
+    <span class="infoBarTxt"></span> 
+    <span *ngIf="isDetective" class="detectiveWord infoBarTxt">{{getWordDetective()}}</span>
+    <span *ngIf="!isDetective" class="infoBarTxt">{{getWordArtist()}}</span>
+    <!-- <span class="infoBarTxt">{{timeLeft}}</span>  -->
+     <app-timer></app-timer>
+</div>

@@ -1,0 +1,50 @@
+<div class="container noPadding-dialog-container">
+    <div class="headerContainer">
+        <button mat-raised-button mat-dialog-close class="buttonStyle" color="accent">
+            <mat-icon>exit_to_app</mat-icon> 
+        </button>
+        <span *ngIf="index === 0" class="header">How to create a Lobby!</span>
+        <span *ngIf="index === 1" class="header">How to join a Lobby!</span>
+        <span *ngIf="index === 2" class="header">How to start a Game!</span>
+        <span *ngIf="index === 3" class="header">Game view!</span>
+        <span *ngIf="index === 4" class="header">Artist view!</span>
+        <span *ngIf="index === 5" class="header">Detective view!</span>
+        <span *ngIf="index === 6"></span>
+        <button mat-raised-button class="buttonStyle" color="accent" (click)="skipTuto()" [disabled]="index==6">Skip</button> 
+    </div>
+    <div class="content center">
+        <div *ngIf="index === 0">
+            <img id="createGame" src="assets/Images/tutoPictures/Createlobby.png" class="borderImg tutoPicture">
+        </div>
+        <div *ngIf="index === 1">
+            <img id="joinGame" src="assets/Images/tutoPictures/joinLobbyTuto.png" class="borderImg tutoPicture">
+        </div>
+        <div *ngIf="index === 2">
+            <img id="lobbyView" src="assets/Images/tutoPictures/LobbyView.png" class="borderImg tutoPicture">
+        </div>
+        <div *ngIf="index === 3">
+            <img id="gameInfos" src="assets/Images/tutoPictures/Gameinfos.png" class="borderImg tutoPicture">
+        </div>
+        <div *ngIf="index === 4">
+            <img id="drawingView" src="assets/Images/tutoPictures/drawingView.png" class="borderImg tutoPicture">
+        </div>
+        <div *ngIf="index === 5">
+            <img id="guessView" src="assets/Images/tutoPictures/guessView.png" class="borderImg tutoPicture">
+        </div>
+        <div *ngIf="index === 6">
+            <img id="guessView" src="assets/Images/tutoPictures/fun-2.gif" class="funahead">
+        </div>
+    </div>
+    <div class="buttons">
+        <button mat-raised-button class="md-button bottom buttonStyle" color="accent" [disabled]="!canPrevious()" (click)="onPrevious()"> 
+            Previous
+        </button>
+        <div></div>
+        <button *ngIf="index != 6" mat-raised-button class="md-button bottom buttonStyle" color="accent" (click)="onNext()">
+            Next 
+        </button>
+        <button *ngIf="index === 6" mat-dialog-close mat-raised-button class="md-button bottom buttonStyle" color="accent">
+            Play!
+        </button>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: auto min-content;
+  grid-template-rows: auto;
+  text-align: center;
+}
+
+mat-card {
+  margin: 20px;
+}
+
+.h3 {
+  text-align: center;
+}
+
+#leaveButton {
+  position: absolute;
+  vertical-align: middle;
+  right: 0;
+  top: 30%;
+}
+::ng-deep.mat-icon.deleteIcon {
+  color: #FF6666;
+}

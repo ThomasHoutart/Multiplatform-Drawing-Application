@@ -1,0 +1,33 @@
+<div class="containerCreationPairStep1">
+    <span class="headerText">Word-Image Pair Creation</span>
+    <h3>Word or expression</h3>
+    <form id="loginForm" class="input" [formGroup]="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Word or expression</mat-label>
+            <input matInput formControlName="word">
+            <mat-error *ngIf="form.get('word').invalid">Word must be 3+ characters</mat-error>
+        </mat-form-field>
+    </form>
+    <h3 class="word">Difficulty</h3>
+<div>
+  <mat-button-toggle-group name="difficulty" aria-label="difficulty" [value]="difficulty">
+    <mat-button-toggle value="Easy" (click)="onDifficultyChange('Easy')">
+      <span class="difficultyButton">Easy</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="Normal" (click)="onDifficultyChange('Normal')">
+      <span class="difficultyButton">Normal</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="Hard" (click)="onDifficultyChange('Hard')">
+      <span class="difficultyButton">Hard</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+    <h2>Hints</h2>
+    <app-hint-list #hintList></app-hint-list>
+    <div class="buttonDiv">
+        <button [disabled]="form.invalid || !hintList.isListValid()" class="continueButton bottom" color="accent" mat-raised-button (click)="continue()">
+            Continue
+        </button>
+    </div>
+</div>
+

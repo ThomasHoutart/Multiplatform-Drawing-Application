@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".uicontrollers.game.DetectiveFragment">
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.android.example.drawhubmobile.views.DrawingCanvasView
+            android:id="@+id/drawingCanvasView"
+            android:layout_width="@dimen/canvas_size"
+            android:layout_height="@dimen/canvas_size"
+            android:transitionName="canvasView" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/scoresFragment"
+            android:name="com.android.example.drawhubmobile.uicontrollers.game.ScoresFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="start" />
+    </GridLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:alpha="0.8"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/guessLayout"
+            style="@style/FormEditTextLayout"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_small"
+            android:hint="@string/guess">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/detectiveGuess"
+                style="@style/FormEditText"
+                android:imeOptions="actionSend" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

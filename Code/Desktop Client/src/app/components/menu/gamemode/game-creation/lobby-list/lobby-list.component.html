@@ -1,0 +1,39 @@
+<div class="containerLobbyList" #table>
+  <div>
+    <div class="mat-elevation-z8 tableContainer">
+      <table mat-table [dataSource]="filteredList">
+        <ng-container matColumnDef="gameName">
+          <th mat-header-cell *matHeaderCellDef class="w-70 stickyHeader ">Name</th>
+          <td mat-cell *matCellDef="let lobby; row"
+            >{{lobby.gameName}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef class="th-center w-20 stickyHeader ">Status</th>
+          <td mat-cell *matCellDef="let lobby; row" class="th-center"
+             >{{lobby.status}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="playerCount">
+          <th mat-header-cell *matHeaderCellDef class="w-10 th-center stickyHeader ">Players</th>
+          <td mat-cell *matCellDef="let lobby; row" 
+            class="th-center" >
+            {{lobby.playerCount}}{{lobby.gameMode === 'BR' ? '/8' : '/4'}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{ 'selected': selection.isSelected(row) }" (click)="selectRow(row)"></tr>
+      </table>
+    </div>
+  </div>
+  <div class="containerButtons center">
+    <button mat-raised-button class="md-button bottom buttonStyle" color="accent" (click)="onCreateLobby()">
+      Create </button>
+    <button mat-raised-button class="md-button bottom buttonStyle" color="accent" (click)="onJoinLobby(true)"
+      [disabled]="!canJoinLobbyAsPlayer()">
+      Join</button>
+    <button mat-raised-button class="md-button bottom buttonStyle" color="accent" (click)="onJoinLobby(false)"
+      [disabled]="!canJoinLobbyAsSpectator()">
+      Spectate</button>
+  </div>
+</div>

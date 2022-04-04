@@ -1,0 +1,26 @@
+<div class="preventOverflow">
+  <div class="mat-elevation-z8 containerScoreboard">
+    <table mat-table [dataSource]="inGamePlayerList">
+      <ng-container matColumnDef="placementPosition">
+        <th mat-header-cell *matHeaderCellDef class="w-20 th-left stickyHeader"></th>
+        <td mat-cell *matCellDef="let player;" class="th-left bigSize"> #{{player.placementPosition}}</td>
+      </ng-container>
+      <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef class="w-30 th-center stickyHeader">Score</th>
+        <td mat-cell *matCellDef="let player;" class="th-center"> {{player.score}}</td>
+      </ng-container>
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef class="th-center w-40 stickyHeader">Username</th>
+        <td mat-cell *matCellDef="let player;" class="th-center">{{player.username}}</td>
+      </ng-container>
+      <ng-container matColumnDef="icon">
+        <th mat-header-cell *matHeaderCellDef class="w-10 th-left stickyHeader"></th>
+        <td mat-cell *matCellDef="let player;" class="th-left">
+          <img [src]="avatar.getAvatarUrlString(player.avatar)" height="32" width="32">
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns stickyHeader"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="h-row"></tr>
+    </table>
+  </div>
+</div>

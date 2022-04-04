@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.android.example.drawhubmobile.viewmodels.main.GameSelectViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_small"
+        tools:context=".uicontrollers.main.gameSelect.GameSelectFragment">
+
+        <!-- GAME MODE -->
+        <TextView
+            android:id="@+id/gameMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/game_mode"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/textSize_big"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/freeForAll"
+            android:name="com.android.example.drawhubmobile.uicontrollers.main.gameSelect.GameModeItemFragment"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            app:gameMode="FREE_FOR_ALL"
+            app:layout_constraintEnd_toStartOf="@id/battleRoyale"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gameMode"
+            app:modeDescription="@string/ffa_description"
+            app:modeName="Free-For-All"
+            tools:background="@color/colorPrimary"
+            tools:layout="@layout/fragment_game_mode_item" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/battleRoyale"
+            android:name="com.android.example.drawhubmobile.uicontrollers.main.gameSelect.GameModeItemFragment"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            app:gameMode="BATTLE_ROYALE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/freeForAll"
+            app:layout_constraintTop_toBottomOf="@id/gameMode"
+            app:modeDescription="@string/br_description"
+            app:modeName="Battle Royale"
+            tools:background="@color/colorPrimary"
+            tools:layout="@layout/fragment_game_mode_item" />
+
+
+        <!-- DIFFICULTY -->
+        <TextView
+            android:id="@+id/difficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:text="@string/difficulty"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/textSize_big"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/battleRoyale" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/difficultyToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/difficulty"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <Button
+                android:id="@+id/easy"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/easy" />
+
+            <Button
+                android:id="@+id/normal"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/normal" />
+
+            <Button
+                android:id="@+id/hard"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hard" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- LOBBIES -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lobbiesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/difficultyToggle">
+
+            <TextView
+                android:id="@+id/lobbies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:text="@string/lobbies"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/textSize_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/lobbyList"
+                android:name="com.android.example.drawhubmobile.uicontrollers.main.gameSelect.LobbiesCardFragment"
+                android:layout_width="0dp"
+                android:layout_height="500dp"
+                app:layout_constraintEnd_toStartOf="@id/createLobbyBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lobbies"
+                tools:background="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/createLobbyBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_lobby"
+                app:layout_constraintBottom_toTopOf="@id/joinLobbyBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lobbyList" />
+
+            <Button
+                android:id="@+id/joinLobbyBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/join_lobby"
+                app:layout_constraintBottom_toTopOf="@+id/joinLobbyAsSpectatorBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lobbyList" />
+
+            <Button
+                android:id="@+id/joinLobbyAsSpectatorBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/spectate"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lobbyList" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

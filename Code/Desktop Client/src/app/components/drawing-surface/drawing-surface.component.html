@@ -1,0 +1,75 @@
+<div class="container" 
+#drawingSurface
+[ngClass]="{'pencil': toolHandler == pencilService, 'none': toolHandler == eraserService || 
+(game.isGame == true && game.isUserDrawing == false) }">
+    <svg height="100%" width="100%" fill="white">
+        <g *ngIf="isGridOn">
+            <path
+            [attr.d]="gridPath" 
+            stroke="black" 
+            [attr.stroke-opacity]="gridParam.opacity"
+            stroke-width="2"
+            fill="none"
+            fill-opacity="0"
+            ></path>
+        </g>
+        <g *ngFor="let element of elements">
+        <path *ngIf="toolHandler == eraserService && selectedElement.shareId == element.shareId && eraserService.inSurface"
+            [attr.d]="element.path" 
+            stroke="red" 
+            [attr.stroke-opacity]="element.opacity"
+            [attr.stroke-width]="element.thickness + 5"
+            fill="none"
+            fill-opacity="0"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            >
+        </path>
+        <path 
+            [attr.d]="element.path" 
+            [attr.stroke]="element.color" 
+            [attr.stroke-opacity]="element.opacity"
+            [attr.stroke-width]="element.thickness"
+            fill="none"
+            fill-opacity="0"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            >
+        </path>
+        <path *ngIf="toolHandler == eraserService && eraserService.inSurface"
+        [attr.d]="element.path" 
+        stroke="transparent" 
+        [attr.stroke-opacity]="element.opacity"
+        [attr.stroke-width]="element.thickness + eraserSize"
+        fill="none"
+        fill-opacity="0"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        (mouseover)="onElement(element)"
+        (mouseout)="offElement()">  
+        </path>
+        </g>
+        <rect
+            *ngIf="toolHandler == eraserService && eraserService.inSurface"
+            [attr.x]="eraserCoordinate.x - eraserSize / 2" 
+            [attr.y]="eraserCoordinate.y - eraserSize / 2"
+            [attr.width]="eraserSize"
+            [attr.height]="eraserSize"
+            fill="white"
+            stroke="black"
+            pointer-events="none"
+        >
+        </rect>
+        <!--
+        <circle
+            *ngIf="toolHandler == eraserService"
+            [attr.cx]="eraserCoordinate.x" 
+            [attr.cy]="eraserCoordinate.y"
+            [attr.r]="eraserSize / 2"
+            fill="white"
+            stroke="black"
+            pointer-events="none"
+        ></circle>
+        -->
+    </svg>
+</div>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_small"
+    tools:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:id="@+id/usernameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/textSize_bigger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="cooldude96" />
+
+
+    <ImageView
+        android:id="@+id/avatarView"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:contentDescription="@string/avatarImageContentDescription"
+        app:layout_constraintBottom_toTopOf="@id/timestampText"
+        app:layout_constraintStart_toStartOf="@id/usernameText"
+        app:layout_constraintTop_toBottomOf="@id/usernameText"
+        tools:src="@drawable/ic_test_avatar" />
+
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/ic_chat_bubble_background_received"
+        android:maxWidth="500sp"
+        android:maxLength="@integer/max_chat_characters"
+        android:padding="@dimen/margin_small"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/avatarView"
+        app:layout_constraintTop_toBottomOf="@id/usernameText"
+        tools:text="Hey everyone! How is it going? Hey everyone! How is it going? Hey everyone! How is it going? Hey everyone! How is it going?" />
+
+    <TextView
+        android:id="@+id/timestampText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/usernameText"
+        app:layout_constraintTop_toBottomOf="@id/messageText"
+        tools:text="11:30:24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainBackgroundFragment">
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_roomListFragment"
+            app:destination="@id/roomListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_chatFragment_to_mainBackgroundFragment"
+            app:destination="@id/mainBackgroundFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right" />
+        <action
+            android:id="@+id/action_chatFragment_to_gameActivity"
+            app:destination="@id/gameActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainBackgroundFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.MainBackgroundFragment"
+        android:label="fragment_main_background"
+        tools:layout="@layout/fragment_main_background" >
+        <action
+            android:id="@+id/action_mainBackgroundFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainBackgroundFragment_to_lobbyFragment"
+            app:destination="@id/lobbyFragment">
+            <argument
+                android:name="lobbyName"
+                app:argType="string"
+                android:defaultValue="No name given" />
+            <argument
+                android:name="isCreator"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_mainBackgroundFragment_to_gameActivity"
+            app:destination="@id/gameActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomListFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.chat.RoomListFragment"
+        android:label="fragment_room_list"
+        tools:layout="@layout/fragment_room_list" >
+        <action
+            android:id="@+id/action_roomListFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popUpTo="@id/mainBackgroundFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/gameActivity"
+        android:name="com.android.example.drawhubmobile.uicontrollers.game.GameActivity"
+        android:label="activity_game"
+        tools:layout="@layout/activity_game" >
+        <argument
+            android:name="gameName"
+            app:argType="string"
+            android:defaultValue="No game name" />
+        <argument
+            android:name="players"
+            app:argType="com.android.example.drawhubmobile.models.SimpleUser[]" />
+        <argument
+            android:name="isSpectator"
+            app:argType="boolean" />
+    </activity>
+    <fragment
+        android:id="@+id/lobbyFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.lobby.LobbyFragment"
+        android:label="fragment_lobby"
+        tools:layout="@layout/fragment_lobby" >
+        <action
+            android:id="@+id/action_lobbyFragment_to_gameActivity"
+            app:destination="@id/gameActivity" />
+        <action
+            android:id="@+id/action_lobbyFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <argument
+            android:name="isCreator"
+            app:argType="boolean" />
+        <argument
+            android:name="lobbyName"
+            app:argType="string"
+            android:defaultValue="No name given" />
+        <action
+            android:id="@+id/action_lobbyFragment_to_mainBackgroundFragment"
+            app:destination="@id/mainBackgroundFragment" />
+        <argument
+            android:name="isSpectator"
+            app:argType="boolean" />
+    </fragment>
+
+</navigation>

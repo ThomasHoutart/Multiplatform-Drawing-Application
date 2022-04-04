@@ -1,0 +1,22 @@
+<div class="container">
+  <h3>Create a Lobby</h3>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline" color="accent" class="roomnameForm">
+      <mat-label>Lobby Name</mat-label>
+      <input matInput formControlName="lobby">
+    </mat-form-field>
+  </form>
+  <div *ngIf='showErrorMessage()' style="color: red">
+      <p>{{errorMessage1}}</p>
+      <p>{{errorMessage2}}</p>
+  </div>
+  <div class="containerLobbyButtons">
+    <button mat-stroked-button color="accent" (click)="onCancel()" class="buttonLobby marginRight">
+      CANCEL
+    </button>
+    <button mat-raised-button color="accent" class="buttonLobby marginLeft" [disabled]="form.get('lobby').invalid"
+      (click)="onCreate()">
+      CREATE
+    </button>
+  </div>
+</div>

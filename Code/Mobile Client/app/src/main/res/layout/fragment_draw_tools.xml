@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/drawingOptionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        tools:layout_height="400sp"
+        tools:layout_width="400sp">
+
+        <com.larswerkman.holocolorpicker.ColorPicker
+            android:id="@+id/colorPicker"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/strokeWidthLabel"
+            app:layout_constraintEnd_toStartOf="@+id/svBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.larswerkman.holocolorpicker.SVBar
+            android:id="@+id/svBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/opacityBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/colorPicker"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.larswerkman.holocolorpicker.OpacityBar
+            android:id="@+id/opacityBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/strokeWidthLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/colorPicker"
+            app:layout_constraintTop_toBottomOf="@+id/svBar" />
+
+        <TextView
+            android:id="@+id/strokeWidthLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/strokeWidthLabel"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/strokeWidthSlider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/colorPicker" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/strokeWidthSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:value="10.0"
+            android:valueFrom="1"
+            android:valueTo="100"
+            app:layout_constraintBottom_toTopOf="@id/drawBtnGrid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/strokeWidthLabel" />
+
+        <GridLayout
+            android:id="@+id/drawBtnGrid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:columnCount="2"
+            app:layout_constraintBottom_toTopOf="@id/actionBtnGrid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/strokeWidthSlider">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/pencilButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:contentDescription="@string/pencilLabel"
+                android:src="@drawable/ic_pencil_48dp"
+                app:backgroundTint="@color/colorAccent"
+                app:borderWidth="0dp"
+                app:maxImageSize="32dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/eraserButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:contentDescription="@string/eraserLabel"
+                android:src="@drawable/ic_eraser_24px"
+                app:backgroundTint="@color/colorText"
+                app:borderWidth="0dp"
+                app:maxImageSize="32dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:id="@+id/actionBtnGrid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:columnCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drawBtnGrid">
+
+            <ImageButton
+                android:id="@+id/undoButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="0dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="onClick"
+                android:contentDescription="@string/undoLabel"
+                android:padding="@dimen/margin_small"
+                android:src="@drawable/ic_undo_24px" />
+
+            <ImageButton
+                android:id="@+id/redoButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="0dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="onClick"
+                android:contentDescription="@string/redoLabel"
+                android:padding="@dimen/margin_small"
+                android:src="@drawable/ic_redo_24px" />
+        </GridLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

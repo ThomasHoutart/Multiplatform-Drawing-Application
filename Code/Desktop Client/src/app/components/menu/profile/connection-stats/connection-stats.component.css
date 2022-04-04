@@ -1,0 +1,59 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 15% 85%;
+  }
+  .containerScoreboard {
+    width: 100%;
+}
+  .headerText {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stickyHeader {
+    background-color: #393A3D;
+    position: sticky; 
+    top: 0;
+  }
+  
+  .w-50 {
+    width: 50%;
+  }
+  .w-100 {
+    width: 100%;
+  }
+  .bigSize {
+    color: #EEEEEE !important;
+    font-size: 1.17em;
+  }
+  .mat-cell {
+    color: #CCCCCC;
+  }
+  .preventOverflow {
+    overflow: auto;
+    height: 57vh;
+  }
+  .wText {
+    color: #EEEEEE !important;
+  }
+  .th-left {
+    text-align: left;
+  }
+  .th-center {
+    text-align: center;
+  }
+  .tableContainer {
+    background-color: #393A3D;
+  }
+  .mat-table {
+    background-color: #393A3D;
+  }

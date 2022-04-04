@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_nav_graph"
+    app:startDestination="@id/gameLoadingFragment">
+
+    <fragment
+        android:id="@+id/artistFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.game.ArtistFragment"
+        android:label="ArtistFragment" >
+        <action
+            android:id="@+id/action_artistFragment_to_gameLoadingFragment"
+            app:destination="@id/gameLoadingFragment" />
+        <action
+            android:id="@+id/action_artistFragment_to_mainBackgroundFragment"
+            app:destination="@id/mainBackgroundFragment" />
+        <action
+            android:id="@+id/action_artistFragment_to_detectiveFragment"
+            app:destination="@id/detectiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detectiveFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.game.DetectiveFragment"
+        android:label="fragment_detective"
+        tools:layout="@layout/fragment_detective" >
+        <action
+            android:id="@+id/action_detectiveFragment_to_detectiveChatFragment"
+            app:destination="@id/detectiveChatFragment" />
+        <action
+            android:id="@+id/action_detectiveFragment_to_gameLoadingFragment"
+            app:destination="@id/gameLoadingFragment" />
+        <action
+            android:id="@+id/action_detectiveFragment_to_mainBackgroundFragment"
+            app:destination="@id/mainBackgroundFragment" />
+        <action
+            android:id="@+id/action_detectiveFragment_to_artistFragment"
+            app:destination="@id/artistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detectiveChatFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.game.DetectiveChatFragment"
+        android:label="fragment_detective_chat"
+        tools:layout="@layout/fragment_detective_chat" >
+        <action
+            android:id="@+id/action_detectiveChatFragment_to_mainBackgroundFragment"
+            app:destination="@id/mainBackgroundFragment" />
+        <action
+            android:id="@+id/action_detectiveChatFragment_to_artistFragment"
+            app:destination="@id/artistFragment" />
+        <action
+            android:id="@+id/action_detectiveChatFragment_to_detectiveFragment"
+            app:destination="@id/detectiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameLoadingFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.game.GameLoadingFragment"
+        android:label="fragment_game_loading"
+        tools:layout="@layout/fragment_loading_spinner" >
+        <action
+            android:id="@+id/action_gameLoadingFragment_to_detectiveFragment"
+            app:destination="@id/detectiveFragment" />
+        <action
+            android:id="@+id/action_gameLoadingFragment_to_artistFragment"
+            app:destination="@id/artistFragment" />
+        <action
+            android:id="@+id/action_gameLoadingFragment_to_mainBackgroundFragment"
+            app:destination="@id/mainBackgroundFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainBackgroundFragment"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.MainBackgroundFragment"
+        android:label="fragment_main_background"
+        tools:layout="@layout/fragment_main_background" />
+    <!--<activity
+        android:id="@+id/mainActivity"
+        android:name="com.android.example.drawhubmobile.uicontrollers.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />-->
+</navigation>

@@ -1,0 +1,70 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-row: 1fr auto;
+  background-color: #191A1D;
+  text-align: center;
+}
+
+mat-form-field {
+  margin-top: 0px;
+  margin: 20px 0px;
+}
+
+#loginForm {
+  margin: auto;
+}
+
+#logo {
+  margin-top: 50px;
+  width: 400px;
+  height: 200px;
+}
+
+#loginButton {
+  margin-top: 25px;
+  height: 64px;
+  width: 90%;
+  font-size: 22px;
+}
+
+.loading {
+  min-width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #FF6666;
+}
+
+#createAccount {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 3%;
+  margin-bottom: 3%;
+
+}
+
+#forgotPassword {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 3%;
+  margin-bottom: 3%;
+}
+
+.input {
+  margin: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  height: 25px;
+  text-align: left;
+}

@@ -1,0 +1,62 @@
+.containerWithChat {
+  display: grid;
+  grid-template-columns: 72px 5fr 2fr;
+  height: 100%;
+}
+.containerWithoutChat {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  height: 100%;
+}
+
+.toolbar {
+  text-align: center;
+  background-color: #191A1D;
+  display: grid;
+  grid-template-rows: auto 8px auto auto auto auto auto 1fr;
+}
+
+.fullSize {
+  height: 100%;
+}
+
+#logo {
+  padding-top: 32px;
+  padding-bottom: 8px;
+  width: 64px;
+  margin: auto;
+}
+
+#separator {
+  height: 2px;
+  width: 32px;
+  border-radius: 1px;
+  border: none;
+  background-color: #393A3D
+}
+
+.buttons {
+  margin: 0;
+  margin-top: 20px;
+}
+
+#mainView {
+  padding: 20px;
+  padding-top: 0;
+}
+
+#chatSection {
+  text-align: center;
+  background-color: #191A1D;
+}
+
+.bottom {
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+.loading {
+  cursor: progress;
+}
+.wordImagePairWindow{
+  height: 100%;
+}

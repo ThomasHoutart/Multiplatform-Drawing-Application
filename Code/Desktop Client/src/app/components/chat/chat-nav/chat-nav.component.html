@@ -1,0 +1,18 @@
+<div class="container">
+   <div>
+       <button mat-flat-button color="accent" class="smallButton backButton" (click)="onBack()" [disabled]="!isJoinedRoomPage" *ngIf="changeRoomView">
+           <mat-icon>keyboard_arrow_left</mat-icon>
+       </button>
+       <button mat-stroked-button class="md-button" color="accent" (click)="onChangeRoom()" *ngIf="!changeRoomView && !game.isGame">
+        CHANGE ROOM
+    </button>
+   </div>
+   <div>
+       <h3 class="cropText">{{roomName}}</h3>
+   </div>
+   <div>
+    <button mat-flat-button color="accent" class="smallButton" (click)="onHistory()" [disabled]="changeRoomView || (!lobby.inLobby && game.isGame)"> 
+        <mat-icon>history</mat-icon>
+     </button>
+   </div>
+</div>

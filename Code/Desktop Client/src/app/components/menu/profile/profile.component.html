@@ -1,0 +1,50 @@
+<!-- <div class="profileContainer">
+  <div class="leftContainer">
+    <div class="basicStatsContainer">
+      <span class="usernameHeader">{{username}}</span>
+      <div class="imgSquare">
+        <img [src]="avatar" class="imageAvatar">
+      </div>
+      <span class="subNameText">{{firstName}} {{lastName}}</span>
+    </div>
+    <app-general-stats class="border"></app-general-stats>
+  </div>
+  <div class="rightContainer">
+    <app-match-history class="border"></app-match-history>
+    <app-connection-stats class="border"></app-connection-stats>
+  </div>
+</div> -->
+
+<div class="profileContainer">
+  <div class="generalContainer">
+    <div class="imgSquare">
+      <img [src]="avatar" class="imageAvatar">
+    </div>
+    <div class="containerInfoUser">
+      <span class="usernameHeader">{{username}}</span>
+      <span class="subNameText">{{firstName}} {{lastName}}</span>
+    </div>
+  </div>
+  <div class="buttonsContainer">
+    <mat-button-toggle-group class="test" name="profileInfo" aria-label="profileInfo" [value]="infoValue">
+      <mat-button-toggle value="generalStats" (click)="showGeneralStats()">
+        <span class="infoButton">General Stats</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="matchHistory" (click)="showMatchHistory()">
+        <span class="infoButton">Match History</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="connectionHistory" (click)="showConnectionHistory()">
+        <span class="infoButton">Connection History</span>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div *ngIf="showStats && !showGamesHistory" class="border mat-elevation-z8">
+    <app-general-stats></app-general-stats>
+  </div>
+  <div *ngIf="showGamesHistory && !showStats" class="border mat-elevation-z8">
+    <app-match-history></app-match-history>
+  </div>
+  <div *ngIf="!showGamesHistory && !showStats" class="border mat-elevation-z8">
+    <app-connection-stats></app-connection-stats>
+  </div>
+</div>

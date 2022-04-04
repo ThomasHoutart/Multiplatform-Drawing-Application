@@ -1,0 +1,73 @@
+<div class="containerLeaderboard">
+  <span class="headerText">Leaderboard</span>
+  <div class="buttonSelection">
+    <div>
+      <mat-form-field class="leaderBoardLabel" appearance="fill">
+        <mat-label class="boiiii">Time lapse</mat-label>
+        <mat-select class="leaderBoardLabel" [(value)]="rankingType" (selectionChange)="onRanking(($event).value)">
+          <mat-option color="accent" value="Day">Today</mat-option>
+          <mat-option value="Week">This Week</mat-option>
+          <mat-option value="Total">All Time</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="leaderBoardLabel" appearance="fill">
+        <mat-label class="boiiii">Game Mode</mat-label>
+        <mat-select [(value)]="rankingMode" (selectionChange)="onGameMode(($event).value)">
+          <mat-option value="FFA">Free For All</mat-option>
+          <mat-option value="BR">Battle Royale</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="leaderBoardLabel" appearance="fill">
+        <mat-label class="boiiii">Difficulty</mat-label>
+        <mat-select [(value)]="rankingDifficulty" (selectionChange)="onDifficulty(($event).value)">
+          <mat-option value="Easy">Easy</mat-option>
+          <mat-option value="Normal">Normal</mat-option>
+          <mat-option value="Hard">Hard</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="containerVertical">
+    <div class="vertical-center alignCenter fullWidth">
+      <div class="preventOverflow">
+        <div class="mat-elevation-z8 tableContainer">
+          <table mat-table [dataSource]="filteredList">
+            <ng-container matColumnDef="rank">
+              <th mat-header-cell *matHeaderCellDef class="w-10 stickyHeader">Rank</th>
+              <td mat-cell *matCellDef="let leaderboard; row"
+                [ngClass]="{'highlight': leaderboard.player === getUsername()}">#{{leaderboard.rank}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="picture">
+              <th mat-header-cell *matHeaderCellDef class="th-center w-20 stickyHeader"></th>
+              <td mat-cell *matCellDef="let leaderboard; row" class="th-center"
+                [ngClass]="{'highlight': leaderboard.player === getUsername()}">
+                <img [src]="getUserPicture(leaderboard.avatar)" height="32" width="32">
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="player">
+              <th mat-header-cell *matHeaderCellDef class="w-50 th-center stickyHeader">Player</th>
+              <td mat-cell *matCellDef="let leaderboard; row"
+                [ngClass]="{'highlight': leaderboard.player === getUsername()}" class="th-center">
+                {{leaderboard.username}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="score">
+              <th mat-header-cell *matHeaderCellDef class="w-20 th-center stickyHeader">Wins</th>
+              <td mat-cell *matCellDef="let leaderboard; row"
+                [ngClass]="{'highlight': leaderboard.player === getUsername()}" class="th-center"> {{leaderboard.nWins}}
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="stickyHeader"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

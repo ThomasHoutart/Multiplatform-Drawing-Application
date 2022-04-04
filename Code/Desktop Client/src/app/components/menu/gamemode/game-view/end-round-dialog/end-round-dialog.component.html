@@ -1,0 +1,38 @@
+<div class="containerEndRoundPopUp">
+  <div class="containerVertical">
+    <div class="vertical-center alignCenter">
+      <span class="bigSize th-center">{{title}}</span>
+    </div>
+  </div>
+  <div class="preventOverflow">
+  <div class="containerScoreboard">
+    <table mat-table [dataSource]="inGamePlayerList">
+      <ng-container matColumnDef="icon">
+        <th mat-header-cell *matHeaderCellDef class="w-20 th-left"></th>
+        <td mat-cell *matCellDef="let player;" class="w-10 th-left">
+          <img [src]="avatar.getAvatarUrlString(player.avatar)" height="32" width="32">
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef class="w-50">Username</th>
+        <td mat-cell *matCellDef="let player;" class="w-50 th-center">{{player.username}}</td>
+      </ng-container>
+      <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef>Score</th>
+        <td mat-cell *matCellDef="let player;" class="w-15 th-left"> {{player.score}}</td>
+      </ng-container>
+      <ng-container matColumnDef="scoreVarFromLastRound">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let player;" class="w-15 th-left"> +{{player.scoreVarFromLastRound}}</td>
+      </ng-container>
+      <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="h-row"></tr>
+    </table>
+  </div>
+</div>
+  <div class="containerVertical yellow">
+    <div class="vertical-center alignCenter">
+      <span class="timeLeftText">Next round starts soon...</span>
+    </div>
+  </div>
+</div>

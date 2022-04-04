@@ -1,0 +1,26 @@
+<!-- <app-preview [drawing]="wordImagePair.paths" style="height: 80%;"></app-preview>
+<div class="center">
+    <button color="accent" class="returnButton navButton" mat-raised-button (click)="onBack()">
+      Back
+    </button>
+    <button *ngIf="!sending" color="accent" class="returnButton navButton" mat-raised-button (click)="sendDrawing()">
+      Finish
+    </button>
+  </div> -->
+  <div class="containerPreview">
+    <span class="headerText">Preview</span>
+      <div class="containerVertical">
+        <div class="fullWidth">
+          <app-preview [drawing]="wordImagePair.paths"></app-preview>
+        </div>
+      </div>
+    <div class="containerButtons">
+      <button color="accent" class="backButton" mat-raised-button (click)="onBack()">
+        Back
+      </button>
+      <button *ngIf="!sending" color="accent" class="finishButton" mat-raised-button (click)="sendDrawing()">
+        Finish
+      </button>
+    </div>
+  </div>
+  <mat-spinner *ngIf="sending" color="accent"></mat-spinner>

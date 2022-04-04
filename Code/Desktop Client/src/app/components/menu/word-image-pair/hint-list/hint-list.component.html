@@ -1,0 +1,20 @@
+<div class="preventOverflow">
+<div class="hintList">
+  <div *ngFor="let control of hintFormArray.controls; let i = index">
+    <div class="hintContainer">
+      <mat-form-field appearance="outline" class="input">
+        <input matInput [pattern]="'^[a-zA-Z ]+$'" [formControl]="hintFormArray.controls[i]">
+        <mat-error *ngIf="hintFormArray.controls[i].invalid">Hint must be 5+ alphanumeric characters</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent" (click)="deleteHint(i)" class="deleteButton">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div>
+  </div>
+  <button  [disabled]="!(hintFormArray.length < 5)" class="addMatButton" color="accent" mat-raised-button (click)="addHint()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+</div>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/achievementsFragment"
+        android:icon="@drawable/ic_trophy_24px"
+        app:showAsAction="ifRoom"
+        android:iconTint="@color/colorText"
+        android:title="@string/bottomNavBarAchievements" />
+    <item
+        android:id="@+id/leaderboardFragment"
+        android:icon="@drawable/ic_leaderboard_24px"
+        app:showAsAction="ifRoom"
+        android:title="@string/bottomNavBarLeaderboard" />
+
+    <item
+        android:id="@+id/gameSelectFragment"
+        android:enabled="false"
+        android:title=""
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_profile_24px"
+        app:showAsAction="ifRoom"
+        android:title="@string/bottomNavBarProfile" />
+    <item
+        android:id="@+id/navigationChat"
+        android:icon="@drawable/ic_chat_24px"
+        app:showAsAction="ifRoom"
+        android:title="@string/bottomNavBarChat" />
+
+</menu>

@@ -1,0 +1,21 @@
+.containerInfoBar {
+    width: 100%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 20% 50% 30%;
+    justify-items: center;
+}
+.detectiveWord {
+    letter-spacing: 3px;
+}
+
+.infoBarTxt {
+    color: #EEEEEE;
+    display: block;
+    font-size: 3em;
+    margin-block-start: auto;
+    margin-block-end: auto;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}

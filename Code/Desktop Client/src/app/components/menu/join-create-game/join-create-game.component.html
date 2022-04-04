@@ -1,0 +1,26 @@
+<div class="container">
+    <h3>Join a Game</h3>
+    <form [formGroup]="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Game Name</mat-label>
+            <input matInput formControlName="game" (keyup)="onChange()">
+          </mat-form-field>
+    </form>
+    <div class="list" *ngIf="fetchedList">
+        <!--
+        <div *ngFor="let room of filteredRoomList">
+            <p (click)="onJoin(room)">{{room.RoomName}}</p>
+        </div>
+        -->
+    </div>
+    <!--
+    <div *ngIf="!fetchedList">
+        <mat-spinner></mat-spinner>
+    </div>
+    -->
+    <div>
+        <button mat-raised-button color = "accent" [disabled]="form.get('game').invalid" (click)="onCreate()" class="roomButton">Create</button>
+        <button mat-raised-button color = "accent" (click)="onCancel()" class="roomButton">Cancel</button>
+    </div>
+</div>
+

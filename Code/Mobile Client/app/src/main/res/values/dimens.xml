@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">16dp</dimen>
+    <dimen name="margin_medium">32dp</dimen>
+    <dimen name="margin_large">64dp</dimen>
+    <dimen name="textSize_big">28sp</dimen>
+    <dimen name="textSize_default">16sp</dimen>
+    <dimen name="textSize_small">14sp</dimen>
+    <dimen name="textSize_bigger">20sp</dimen>
+    <integer name="max_chat_characters">140</integer>
+    <integer name="max_auth_input_characters">20</integer>
+    <integer name="max_room_name_length">30</integer>
+    <dimen name="canvas_size">800dp</dimen>
+</resources>
